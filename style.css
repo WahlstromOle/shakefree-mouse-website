@@ -1,0 +1,110 @@
+:root {
+  --blue: #3D42E0;
+  --blue-hover: #2F33B8;
+  --on-blue: #fff;
+  --bg: #F6F7FB;
+  --surface: #fff;
+  --text: #15172B;
+  --muted: #4A4D63;
+  --border: #D5D7E3;
+  --link: #3D42E0;
+  --focus: #3D42E0;
+  --soft: #E9EAFC;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue-hover: #5559F0;
+    --bg: #111220;
+    --surface: #1C1E31;
+    --text: #F2F3FA;
+    --muted: #B9BBD0;
+    --border: #3A3D57;
+    --link: #A4A7FF;
+    --focus: #A4A7FF;
+    --soft: #262960;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 125%; } /* 20px at the default browser size, grows with the visitor's own setting */
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--link); text-underline-offset: 0.15em; }
+a:focus-visible, button:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 0.5em; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.5rem; margin-top: 1.6em; }
+h3 { font-size: 1.15rem; }
+p, ul, ol { margin: 0 0 1em; }
+li { margin-bottom: 0.4em; }
+
+.wrap { max-width: 52rem; margin: 0 auto; padding: 0 1rem; }
+
+/* Header and footer */
+header { background: var(--surface); border-bottom: 1px solid var(--border); }
+header .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; padding-top: 0.6rem; padding-bottom: 0.6rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.15rem; color: var(--text); text-decoration: none; min-height: 3rem; }
+.brand img { width: 2.4rem; height: 2.4rem; }
+nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin-left: auto; }
+nav a { display: inline-flex; align-items: center; min-height: 3rem; padding: 0 0.4rem; font-weight: 600; }
+nav a[aria-current="page"] { color: var(--text); text-decoration: none; }
+
+main { padding: 2rem 0 3rem; }
+
+footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
+footer .wrap { padding-top: 1.2rem; padding-bottom: 1.5rem; }
+footer a { display: inline-block; padding: 0.4rem 0; margin-right: 1rem; }
+
+/* Buttons: large, easy to hit */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 3.6rem; padding: 0.6rem 1.6rem;
+  border: 2px solid var(--blue); border-radius: 0.8rem;
+  background: var(--blue); color: var(--on-blue);
+  font: inherit; font-weight: 700; font-size: 1.1rem; text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { background: var(--blue-hover); border-color: var(--blue-hover); }
+.button.secondary { background: transparent; color: var(--link); border-color: currentColor; }
+.button.secondary:hover { background: var(--soft); }
+.button[aria-disabled="true"] { cursor: default; border-style: dashed; background: transparent; color: var(--muted); }
+.buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; padding: 1.4rem 1.5rem; margin-bottom: 1.2rem; }
+.lead { font-size: 1.2rem; color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* Home */
+.hero { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2rem; }
+.hero img { width: 7rem; height: 7rem; }
+.hero div { flex: 1 1 20rem; }
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem; margin: 1rem 0; }
+.plan { text-align: center; margin: 0; }
+.plan .price { font-size: 2rem; font-weight: 700; }
+.plan .per { color: var(--muted); }
+.features { padding-left: 1.2em; }
+
+/* Activation page */
+.key {
+  font-family: Consolas, "Cascadia Mono", monospace; font-size: 1.6rem; font-weight: 700;
+  word-break: break-all; letter-spacing: 0.03em;
+  background: var(--soft); border-radius: 0.6rem; padding: 0.8rem 1rem; margin: 0.5rem 0 0;
+}
+.status { min-height: 1.6em; font-weight: 600; }
+.steps li { margin-bottom: 0.7em; }
+
+@media (forced-colors: active) {
+  .button { border: 2px solid ButtonText; }
+  .key { border: 2px solid CanvasText; }
+}
