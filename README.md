@@ -4,18 +4,21 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com (hosted free on G
 
 | File | Address | What it is |
 |---|---|---|
-| `index.html` | `/` | Home: what the app does, trial, plans, Buy |
+| `index.html` | `/` | Home: how it works, features, live demo, plans, Microsoft Store and Buy |
 | `activate.html` | `/activate?key=...` | Lemon Squeezy's **Activate** button after buying links here; it opens the app with `shakefree://activate?key=...` and shows the key with a Copy button |
 | `privacy.html` | `/privacy` | Privacy policy (for the Microsoft Store listing) |
 | `support.html` | `/support` | Help & contact (for the Microsoft Store listing) |
-| `style.css`, `icon.svg` | | Shared look and the blue pointer icon |
+| `style.css` | | Shared look (warm sand & clay, light and dark mode) |
+| `icon.svg` | | The app's blue pointer icon, used as the browser tab icon |
+| `fonts/` | | The Figtree font, hosted here so no outside files are loaded (licence in `OFL.txt`) |
+| `robots.txt`, `sitemap.xml` | | For search engines; keeps `/activate` out of search results |
 | `CNAME` | | Tells GitHub Pages to use shakefreemouse.com |
 
 ## Things to change later
 
-- **Microsoft Store link**: in `index.html`, replace the “Coming soon to the Microsoft Store” line with a link to the Store listing once the app is published.
+- **Microsoft Store link**: in `index.html`, the three “Get it from Microsoft Store” buttons point to `https://apps.microsoft.com/` for now. Replace that address with the app's own Store listing once it is published.
 - **Live Lemon Squeezy link**: the two “Buy a key” links in `index.html` point to the *test mode* checkout. Replace them with the live checkout link before release.
-- **Activation page must stay private**: `activate.html` must never get analytics, outside fonts or other outside files, because the licence key is in its address.
+- **Activation page must stay private**: `activate.html` must never get analytics, outside fonts or other outside files, because the licence key is in its address. This is also why the font is hosted on the site instead of loaded from Google Fonts.
 
 ## Domain settings (at the company you bought shakefreemouse.com from)
 
