@@ -158,9 +158,11 @@ footer .links a:hover { color: var(--text); }
 .slider input { width: 13.75rem; height: 2.75rem; accent-color: var(--accent); }
 .pad { position: relative; height: 26rem; border-radius: 2rem; background: var(--sand); overflow: hidden; cursor: crosshair; touch-action: none; }
 .pad .ring { position: absolute; left: 50%; top: 50%; width: 7.5rem; height: 7.5rem; margin: -3.75rem 0 0 -3.75rem; border-radius: 999px; border: 1.5px dashed var(--border-strong); }
-.pad .dot, .pad .trail { position: absolute; left: 0; top: 0; border-radius: 999px; background: var(--accent); pointer-events: none; }
-.pad .dot { width: 1.625rem; height: 1.625rem; margin: -0.8125rem 0 0 -0.8125rem; box-shadow: 0 0 0 0.5rem var(--accent-soft); }
-.pad .trail { width: 0.625rem; height: 0.625rem; margin: -0.3125rem 0 0 -0.3125rem; }
+.pad .dot, .pad .trail { position: absolute; left: 0; top: 0; pointer-events: none; }
+/* The moving cursor: an arrow whose tip sits exactly on the smoothed position */
+.pad .dot { width: 1.75rem; height: 2.45rem; margin: -0.13rem 0 0 -0.13rem; filter: drop-shadow(0 2px 3px rgba(46, 38, 32, 0.3)); }
+.pad .dot svg { display: block; width: 100%; height: 100%; fill: var(--accent); stroke: #FFFFFF; stroke-width: 1.5; stroke-linejoin: round; }
+.pad .trail { width: 0.625rem; height: 0.625rem; margin: -0.3125rem 0 0 -0.3125rem; border-radius: 999px; background: var(--accent); }
 .pad .status { position: absolute; left: 1.75rem; bottom: 1.25rem; margin: 0; font-size: 0.9375rem; color: var(--muted); min-height: 0; font-weight: 400; }
 @media (max-width: 40rem) { .pad { height: 18rem; } }
 
