@@ -4,62 +4,303 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ShakeFree Mouse – steady cursor for shaky hands</title>
-<meta name="description" content="ShakeFree Mouse is a small Windows app that smooths hand tremor before it reaches the mouse cursor. Try it free for 5 days.">
+<meta name="description" content="ShakeFree Mouse is a small Windows app that smooths hand tremor before it reaches the mouse pointer. Get it from Microsoft Store and try it free for 5 days.">
+<link rel="canonical" href="https://shakefreemouse.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ShakeFree Mouse">
+<meta property="og:title" content="ShakeFree Mouse – steady cursor for shaky hands">
+<meta property="og:description" content="A small Windows app that smooths hand tremor before it reaches the mouse pointer.">
+<meta property="og:url" content="https://shakefreemouse.com/">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ShakeFree Mouse",
+  "description": "A small Windows app that smooths hand tremor before it reaches the mouse pointer, with hold to click and protection against accidental double clicks.",
+  "url": "https://shakefreemouse.com/",
+  "operatingSystem": "Windows",
+  "applicationCategory": "UtilitiesApplication",
+  "publisher": { "@type": "Organization", "name": "Wahlstrom Digital" },
+  "offers": [
+    { "@type": "Offer", "name": "Monthly", "price": "4", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Yearly", "price": "36", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Lifetime", "price": "59", "priceCurrency": "USD" }
+  ]
+}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap">
-  <a class="brand" href="index.html"><img src="icon.svg" alt="">ShakeFree Mouse</a>
+  <a class="brand" href="index.html">
+    <svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5"/><path d="M8 19 C 12 13, 15 13, 18 18 S 24 23, 28 17" style="stroke: var(--accent)" stroke-width="2.2" stroke-linecap="round"/></svg>
+    ShakeFree Mouse
+  </a>
   <nav aria-label="Main">
-    <a href="index.html" aria-current="page">Home</a>
+    <a href="#how">How it works</a>
+    <a href="#demo">Demo</a>
+    <a href="#pricing">Pricing</a>
     <a href="support.html">Help</a>
-    <a href="privacy.html">Privacy</a>
+    <a class="button" href="#get">Get the app</a>
   </nav>
 </div></header>
 
-<main class="wrap">
-  <section class="hero">
-    <img src="icon.svg" alt="">
-    <div>
-      <h1>A steady cursor, even with shaky hands</h1>
-      <p class="lead">ShakeFree Mouse is a small Windows app that smooths out hand tremor before it reaches the mouse pointer, so you can aim, click and drag with confidence.</p>
+<main id="main">
+
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">Software for steadier pointing</p>
+        <h1 id="hero-title">A steadier cursor, from the mouse you already own.</h1>
+        <p class="lead">ShakeFree Mouse is a small Windows app that smooths out hand tremor before it reaches the pointer, so you can aim, click and drag with confidence again.</p>
+        <div class="buttons">
+          <!-- MICROSOFT STORE LINK: replace https://apps.microsoft.com/ with the app's Store listing (3 places on this page) -->
+          <a class="button" href="https://apps.microsoft.com/">Get it from Microsoft Store</a>
+          <a class="button secondary" href="#demo">Try the live demo</a>
+        </div>
+        <p class="small">For Windows · Try everything free for 5 days, no card needed</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div>
+          <p>What your hand does</p>
+          <svg viewBox="0 0 400 80" preserveAspectRatio="none" fill="none"><polyline points="0,40 10,30 18,50 28,28 36,52 46,33 54,47 64,26 72,55 82,31 90,49 100,29 108,53 118,34 126,46 136,27 144,52 154,32 162,49 172,30 180,54 190,35 198,45 208,28 216,51 226,33 234,48 244,26 252,54 262,31 270,47 280,29 288,52 298,34 306,46 316,27 324,53 334,32 342,48 352,30 360,51 370,35 378,45 388,30 400,40" style="stroke: var(--line)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+        <hr>
+        <div>
+          <p>What your cursor does</p>
+          <svg viewBox="0 0 400 80" preserveAspectRatio="none" fill="none"><path d="M0 40 C 80 30, 140 52, 200 40 S 330 30, 400 40" style="stroke: var(--accent)" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="how" class="band alt" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title">Three calm steps. No new hardware.</h2>
+        <p class="muted">ShakeFree Mouse runs quietly in the background and works with the mouse or trackpad you already use.</p>
+      </div>
+      <ol class="steps-grid">
+        <li>
+          <span class="num">01</span>
+          <h3>Get it from Microsoft Store</h3>
+          <p>Install it in a couple of clicks. Your 5-day free trial starts right away, with everything included and no card needed.</p>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <h3>Set it to your hand</h3>
+          <p>Two simple sliders from 1 to 10 set how much smoothing you want. A practice area shows your hand and the smoothed pointer side by side.</p>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <h3>Move as you mean to</h3>
+          <p>Small tremors are filtered out, while quick, deliberate moves still feel fast. Small buttons and links are easier to reach.</p>
+        </li>
+      </ol>
+
+      <ul class="features" aria-label="Features">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></svg>
+          <div><strong>Smooths shaking</strong><span>Filters out small tremors without slowing your deliberate movements.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>
+          <div><strong>Hold to click</strong><span>Keeps the pointer still while you press, so clicks land where you aim.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="6"/><line x1="12" y1="3" x2="12" y2="9"/><line x1="4" y1="20" x2="20" y2="4"/></svg>
+          <div><strong>No accidental double clicks</strong><span>A quick, unintended second click can be ignored, so files don’t open by mistake.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="5" width="3" height="14" rx="1"/><rect x="14" y="5" width="3" height="14" rx="1"/></svg>
+          <div><strong>On and off in a moment</strong><span>Use the tray icon or the shortcut Ctrl+Shift+F9.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" style="fill: var(--accent)" stroke="none"/></svg>
+          <div><strong>Fits your Windows</strong><span>Follows light and dark mode, high contrast, larger text and your accent colour.</span></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+          <div><strong>Private</strong><span>No ads, no tracking. Your settings stay on your PC.</span></div>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <div class="buttons">
-    <!-- Microsoft Store: replace this with the Store link once the app is published -->
-    <span class="button secondary" aria-disabled="true">Coming soon to the Microsoft Store</span>
-    <a class="button" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de">Buy a key</a>
-  </div>
-  <p class="muted">Try everything free for 5 days. No card needed.</p>
+  <section id="demo" class="band" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom: 3rem">
+        <p class="eyebrow">Live demo</p>
+        <h2 id="demo-title">Feel the difference.</h2>
+        <p class="muted">Move your pointer inside the box. Turn smoothing off to see a simulated tremor, then on again to watch it settle. This is a simulation in your browser; the app itself works across all of Windows.</p>
+      </div>
+      <div class="demo-controls">
+        <button class="switch" id="sf-toggle" type="button" aria-pressed="true">
+          <span class="track" aria-hidden="true"><span class="knob"></span></span>
+          <span id="sf-toggle-label">Smoothing is on</span>
+        </button>
+        <label class="slider">
+          <span>Tremor strength</span>
+          <input id="sf-strength" type="range" min="0" max="10" step="1" value="6">
+        </label>
+      </div>
+      <div class="pad" id="sf-pad">
+        <div class="ring" aria-hidden="true"></div>
+        <div class="dot" id="sf-dot" aria-hidden="true"></div>
+        <p class="status" id="sf-status">Move your pointer into the box</p>
+      </div>
+    </div>
+  </section>
 
-  <h2>What it does</h2>
-  <ul class="features">
-    <li><strong>Smooths shaking.</strong> Small tremors are filtered out, while quick, deliberate moves still feel fast. Two simple sliders from 1 to 10 set how much.</li>
-    <li><strong>Clicks land where you aim.</strong> Optional “hold to click” keeps the pointer still while you press, and accidental double clicks can be ignored.</li>
-    <li><strong>Turns on and off in a moment.</strong> Use the tray icon or the shortcut Ctrl+Shift+F9.</li>
-    <li><strong>Try it right away.</strong> A practice area in the app shows your hand and the smoothed pointer side by side.</li>
-    <li><strong>Fits your Windows.</strong> Follows light and dark mode, high contrast, larger text and your accent colour.</li>
-    <li><strong>Private.</strong> No ads, no tracking. Your settings stay on your PC.</li>
-  </ul>
+  <section id="pricing" class="band alt" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Pricing</p>
+        <h2 id="pricing-title">Simple plans. Everything included.</h2>
+        <p class="muted">Start with a 5-day free trial. After that, pick the plan that suits you. Every plan includes every feature.</p>
+      </div>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Monthly</h3>
+          <div class="price">$4</div>
+          <div class="per">per month</div>
+        </div>
+        <div class="plan">
+          <div class="plan-top"><h3>Yearly</h3><span class="badge">Save 25%</span></div>
+          <div class="price">$36</div>
+          <div class="per">per year</div>
+        </div>
+        <div class="plan">
+          <h3>Lifetime</h3>
+          <div class="price">$59</div>
+          <div class="per">pay once</div>
+        </div>
+      </div>
+      <ul class="includes">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>Every key works on up to 3 PCs</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>5-day free trial, no card needed</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>Change or cancel any time</li>
+      </ul>
+      <div class="buttons" style="margin-top: 2.5rem">
+        <a class="button" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de">Buy a key</a>
+        <a class="button secondary" href="https://apps.microsoft.com/">Get it from Microsoft Store</a>
+      </div>
+      <p class="small">Payments are handled securely by Lemon Squeezy. After paying, click <strong>Activate</strong> on the confirmation page and ShakeFree Mouse turns on by itself.</p>
+    </div>
+  </section>
 
-  <h2>Plans</h2>
-  <p>Start with a <strong>5-day free trial</strong> with everything included. After that, pick the plan that suits you. Every key works on <strong>up to 3 PCs</strong>.</p>
-  <div class="plans">
-    <div class="card plan"><h3>Monthly</h3><div class="price">$4</div><div class="per">per month</div></div>
-    <div class="card plan"><h3>Yearly</h3><div class="price">$36</div><div class="per">per year</div></div>
-    <div class="card plan"><h3>Lifetime</h3><div class="price">$59</div><div class="per">pay once</div></div>
-  </div>
-  <div class="buttons">
-    <a class="button" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de">Buy a key</a>
-  </div>
-  <p class="muted">Payments are handled securely by Lemon Squeezy. After paying, click <strong>Activate</strong> on the confirmation page and ShakeFree Mouse turns on by itself.</p>
+  <section id="get" class="band" aria-labelledby="get-title">
+    <div class="wrap narrow closing">
+      <h2 id="get-title">Take back a steady hand on screen.</h2>
+      <p class="lead">Get ShakeFree Mouse from Microsoft Store and try everything free for 5 days.</p>
+      <div class="buttons">
+        <a class="button" href="https://apps.microsoft.com/">Get it from Microsoft Store</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer><div class="wrap">
-  <a href="support.html">Help &amp; contact</a><a href="privacy.html">Privacy policy</a>
-  <div>© 2026 Wahlstrom Digital, Sweden</div>
+  <div>
+    <p class="name">ShakeFree Mouse</p>
+    <p>An assistive app for steadier pointing. It is not a medical treatment.</p>
+    <p>© 2026 Wahlstrom Digital, Sweden</p>
+  </div>
+  <nav class="links" aria-label="Footer">
+    <a href="support.html">Help &amp; contact</a>
+    <a href="privacy.html">Privacy policy</a>
+  </nav>
 </div></footer>
+
+<script>
+(function () {
+  var pad = document.getElementById("sf-pad");
+  var dot = document.getElementById("sf-dot");
+  var toggle = document.getElementById("sf-toggle");
+  var toggleLabel = document.getElementById("sf-toggle-label");
+  var strength = document.getElementById("sf-strength");
+  var status = document.getElementById("sf-status");
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var on = true, hover = false, visible = true, px = 50, py = 50;
+  var sm = { x: 50, y: 50 }, trail = [], frame = 0, raf = 0;
+
+  var dots = [];
+  for (var i = 0; i < 12; i++) {
+    var d = document.createElement("div");
+    d.className = "trail";
+    d.setAttribute("aria-hidden", "true");
+    pad.insertBefore(d, dot);
+    dots.push(d);
+  }
+
+  function updateStatus() {
+    status.textContent = hover
+      ? (on ? "Following your pointer, smoothed" : "Following your pointer, with simulated tremor")
+      : "Move your pointer into the box";
+  }
+
+  toggle.addEventListener("click", function () {
+    on = !on;
+    toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    toggleLabel.textContent = on ? "Smoothing is on" : "Smoothing is off";
+    updateStatus();
+  });
+
+  pad.addEventListener("pointermove", function (e) {
+    var r = pad.getBoundingClientRect();
+    px = (e.clientX - r.left) / r.width * 100;
+    py = (e.clientY - r.top) / r.height * 100;
+    if (!hover) { hover = true; updateStatus(); }
+  });
+  pad.addEventListener("pointerleave", function () { hover = false; updateStatus(); });
+
+  function clamp(v) { return Math.max(3, Math.min(97, v)); }
+
+  function tick(ts) {
+    raf = 0;
+    if (!visible) return;
+    raf = requestAnimationFrame(tick);
+    var t = ts / 1000, k = Number(strength.value), tx, ty;
+    if (hover) { tx = px; ty = py; }
+    else if (still) { tx = 50; ty = 50; }
+    else { tx = 50 + 32 * Math.sin(t * 0.45); ty = 50 + 26 * Math.sin(t * 0.7 + 0.6); }
+    sm.x += (tx - sm.x) * 0.1;
+    sm.y += (ty - sm.y) * 0.1;
+    var x = sm.x, y = sm.y;
+    if (!on) {
+      x += k * 0.45 * (Math.sin(t * 29) * 0.6 + Math.sin(t * 43 + 1.3) * 0.4) + (Math.random() - 0.5) * k * 0.25;
+      y += k * 0.45 * (Math.sin(t * 33 + 0.7) * 0.6 + Math.sin(t * 51 + 2.1) * 0.4) + (Math.random() - 0.5) * k * 0.25;
+    }
+    x = clamp(x); y = clamp(y);
+    dot.style.left = x + "%";
+    dot.style.top = y + "%";
+    if (++frame % 3 === 0) {
+      trail.push({ x: x, y: y });
+      if (trail.length > dots.length) trail.shift();
+      for (var j = 0; j < dots.length; j++) {
+        var p = trail[j];
+        if (!p) { dots[j].style.opacity = 0; continue; }
+        dots[j].style.left = p.x + "%";
+        dots[j].style.top = p.y + "%";
+        dots[j].style.opacity = ((j + 1) / trail.length * 0.28).toFixed(2);
+      }
+    }
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      if (visible && !raf) raf = requestAnimationFrame(tick);
+    }).observe(pad);
+  }
+  raf = requestAnimationFrame(tick);
+})();
+</script>
 </body>
 </html>
