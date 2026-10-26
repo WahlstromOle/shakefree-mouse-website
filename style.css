@@ -1,4 +1,4 @@
-/* ShakeFree Mouse: warm sand & clay, calm and airy.
+/* ShakeFree Mouse: the app's blue (#3D42E0) on white and cool greys, calm and airy.
    The font is hosted here (no outside files), so the privacy policy and the
    activation page's "never load outside files" rule still hold. */
 
@@ -11,38 +11,20 @@
 }
 
 :root {
-  --bg: #F7F2EB;
-  --surface: #FFFCF8;
-  --sand: #EFE5D8;
-  --text: #2E2620;
-  --muted: #6B5B4E;
-  --border: #E2D5C4;
-  --border-strong: #CDBBA6;
-  --line: #B9A48E;
-  --accent: #9C4F33;
-  --accent-hover: #7A3C26;
+  --bg: #F6F7FB;
+  --surface: #FFFFFF;
+  --sand: #ECEEF7; /* soft panel colour (demo box, hover, code) */
+  --text: #15172B;
+  --muted: #4F5470;
+  --border: #DFE2EE;
+  --border-strong: #C3C7DA;
+  --line: #9EA3BE;
+  --accent: #3D42E0;
+  --accent-hover: #2C30B5;
   --on-accent: #FFFFFF;
-  --accent-soft: #F3E6DC;
-  --focus: #9C4F33;
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1E1915;
-    --surface: #2A231E;
-    --sand: #2F2721;
-    --text: #F3ECE4;
-    --muted: #B8A796;
-    --border: #3E342C;
-    --border-strong: #5A4C40;
-    --line: #7D6B5B;
-    --accent: #E39A7B;
-    --accent-hover: #EDB297;
-    --on-accent: #1E1915;
-    --accent-soft: #3E2E25;
-    --focus: #E39A7B;
-  }
+  --accent-soft: #E7E8FC;
+  --focus: #3D42E0;
+  color-scheme: light; /* light only, also when Windows is in dark mode */
 }
 
 * { box-sizing: border-box; }
@@ -80,7 +62,7 @@ code { font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.9em; back
 header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 1.25rem; padding-top: 1.5rem; padding-bottom: 1.5rem; }
 .brand { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; font-size: 1.25rem; color: var(--text); text-decoration: none; min-height: 3rem; }
 .brand:hover { color: var(--text); }
-.brand svg { width: 2.25rem; height: 2.25rem; flex: none; }
+.brand img { width: 2.25rem; height: 2.25rem; flex: none; }
 nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; }
 nav a { display: inline-flex; align-items: center; min-height: 3rem; padding: 0 1rem; border-radius: 999px; color: var(--text); text-decoration: none; }
 nav a:hover { color: var(--text); background: var(--sand); }
@@ -151,7 +133,7 @@ footer .links a:hover { color: var(--text); }
 .demo-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem; }
 .switch { display: inline-flex; align-items: center; gap: 1rem; background: none; border: 0; padding: 0.5rem 0; min-height: 3.5rem; font: inherit; font-weight: 600; color: var(--text); cursor: pointer; }
 .switch .track { position: relative; width: 4rem; height: 2.25rem; border-radius: 999px; background: var(--line); transition: background 0.3s ease; flex: none; }
-.switch .knob { position: absolute; top: 0.25rem; left: 0.25rem; width: 1.75rem; height: 1.75rem; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(46, 38, 32, 0.25); transition: transform 0.3s ease; }
+.switch .knob { position: absolute; top: 0.25rem; left: 0.25rem; width: 1.75rem; height: 1.75rem; border-radius: 999px; background: #FFFFFF; box-shadow: 0 1px 3px rgba(21, 23, 43, 0.25); transition: transform 0.3s ease; }
 .switch[aria-pressed="true"] .track { background: var(--accent); }
 .switch[aria-pressed="true"] .knob { transform: translateX(1.75rem); }
 .slider { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; color: var(--muted); font-size: 1.0625rem; }
@@ -160,7 +142,7 @@ footer .links a:hover { color: var(--text); }
 .pad .ring { position: absolute; left: 50%; top: 50%; width: 7.5rem; height: 7.5rem; margin: -3.75rem 0 0 -3.75rem; border-radius: 999px; border: 1.5px dashed var(--border-strong); }
 .pad .dot, .pad .trail { position: absolute; left: 0; top: 0; pointer-events: none; }
 /* The moving cursor: an arrow whose tip sits exactly on the smoothed position */
-.pad .dot { width: 1.75rem; height: 2.45rem; margin: -0.13rem 0 0 -0.13rem; filter: drop-shadow(0 2px 3px rgba(46, 38, 32, 0.3)); }
+.pad .dot { width: 1.75rem; height: 2.45rem; margin: -0.13rem 0 0 -0.13rem; filter: drop-shadow(0 2px 3px rgba(21, 23, 43, 0.3)); }
 .pad .dot svg { display: block; width: 100%; height: 100%; fill: var(--accent); stroke: #FFFFFF; stroke-width: 1.5; stroke-linejoin: round; }
 .pad .trail { width: 0.625rem; height: 0.625rem; margin: -0.3125rem 0 0 -0.3125rem; border-radius: 999px; background: var(--accent); }
 .pad .status { position: absolute; left: 1.75rem; bottom: 1.25rem; margin: 0; font-size: 0.9375rem; color: var(--muted); min-height: 0; font-weight: 400; }
@@ -169,7 +151,9 @@ footer .links a:hover { color: var(--text); }
 /* Home: pricing */
 .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem; margin-bottom: 1rem; }
 .plan { background: var(--surface); border: 1px solid var(--border); border-radius: 1.75rem; padding: 2.25rem 2rem; display: flex; flex-direction: column; gap: 0.5rem; }
-.plan.featured { border: 1.5px solid var(--accent); }
+.plan.featured { border: 2px solid var(--accent); }
+.plan .button { margin-top: auto; } /* buttons line up at the bottom of each card */
+.plan .per { margin-bottom: 1.5rem; }
 .plan-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem; }
 .plan h3 { margin: 0; font-size: 1.375rem; }
 .badge { font-size: 0.875rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 0.35rem 0.75rem; border-radius: 999px; }
