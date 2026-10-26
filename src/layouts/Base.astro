@@ -1,0 +1,64 @@
+---
+import { STORE } from "../links";
+// The frame every page shares: <head>, the top menu and the footer. Change the menu or footer here only.
+interface Props {
+  title: string;
+  description?: string;
+  path?: string; // the page's address, e.g. "/privacy"; leave out for pages Google shouldn't list
+  current?: "home" | "blog" | "help" | "privacy" | "terms";
+  mainClass?: string;
+}
+const { title, description, path, current, mainClass } = Astro.props;
+const home = current === "home" ? "" : "index.html"; // on the home page the menu just scrolls
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title}</title>
+{description && <meta name="description" content={description}>}
+{path && <link rel="canonical" href={new URL(path, Astro.site).href}>}
+<slot name="head-meta" />
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<slot name="head-early" />
+<link rel="stylesheet" href="style.css">
+<slot name="head" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap">
+  <a class="brand" href="index.html">
+    <img src="icon.svg" alt="">
+    ShakeFree Mouse
+  </a>
+  <nav aria-label="Main">
+    <a href={`${home}#how`}>How it helps</a>
+    {current === "home" && <a href="#demo">Demo</a>}
+    <a href={`${home}#pricing`}>Pricing</a>
+    <a href="blog.html" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
+    <a href="support.html" aria-current={current === "help" ? "page" : undefined}>Help</a>
+    <a class="button" href={STORE}>Try it free</a>
+  </nav>
+</div></header>
+
+<main id="main" class={mainClass}>
+<slot />
+</main>
+
+<footer><div class="wrap">
+  <div>
+    <p class="name">ShakeFree Mouse</p>
+    <p>An assistive app for steadier pointing. It is not a medical treatment.</p>
+    <p>© 2026 Wahlstrom Digital</p>
+  </div>
+  <nav class="links" aria-label="Footer">
+    <a href="blog.html">Blog</a>
+    <a href="support.html">Help &amp; contact</a>
+    <a href="privacy.html" aria-current={current === "privacy" ? "page" : undefined}>Privacy policy</a>
+    <a href="terms.html" aria-current={current === "terms" ? "page" : undefined}>Terms &amp; refunds</a>
+  </nav>
+</div></footer>
+<slot name="end" />
+</body>
+</html>

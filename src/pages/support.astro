@@ -1,31 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Help &amp; contact – ShakeFree Mouse</title>
-<meta name="description" content="Help and answers for ShakeFree Mouse: turning smoothing on and off, the free trial, activating your key and using it on several PCs.">
-<link rel="canonical" href="https://shakefreemouse.com/support">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap">
-  <a class="brand" href="index.html">
-    <img src="icon.svg" alt="">
-    ShakeFree Mouse
-  </a>
-  <nav aria-label="Main">
-    <a href="index.html#how">How it helps</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="blog.html">Blog</a>
-    <a href="support.html" aria-current="page">Help</a>
-    <a class="button" href="https://apps.microsoft.com/">Try it free</a>
-  </nav>
-</div></header>
-
-<main id="main" class="wrap narrow prose">
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Help & contact – ShakeFree Mouse" description="Help and answers for ShakeFree Mouse: turning smoothing on and off, the free trial, activating your key and using it on several PCs." path="/support" current="help" mainClass="wrap narrow prose">
   <h1>Help &amp; contact</h1>
 
   <div class="card">
@@ -59,20 +35,4 @@
 
   <h3>The pointer isn’t smoothed in some programs</h3>
   <p>Over windows that run as administrator, Windows may stop normal apps from steering the pointer, so it moves unsmoothed there. Games that read the mouse directly aren’t smoothed either.</p>
-</main>
-
-<footer><div class="wrap">
-  <div>
-    <p class="name">ShakeFree Mouse</p>
-    <p>An assistive app for steadier pointing. It is not a medical treatment.</p>
-    <p>© 2026 Wahlstrom Digital</p>
-  </div>
-  <nav class="links" aria-label="Footer">
-    <a href="blog.html">Blog</a>
-    <a href="support.html">Help &amp; contact</a>
-    <a href="privacy.html">Privacy policy</a>
-    <a href="terms.html">Terms &amp; refunds</a>
-  </nav>
-</div></footer>
-</body>
-</html>
+</Base>

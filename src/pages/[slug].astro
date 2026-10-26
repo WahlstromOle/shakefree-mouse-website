@@ -1,0 +1,61 @@
+---
+// One page per article in src/content/blog, at shakefreemouse.com/<file name>
+import { getCollection, render } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { STORE, BUY } from "../links";
+import { longDate, isoDate } from "../dates";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const url = new URL("/" + post.id, Astro.site).href;
+const structured = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: d.title,
+  description: d.description,
+  url,
+  image: new URL("/" + d.image, Astro.site).href,
+  datePublished: isoDate(d.date),
+  dateModified: isoDate(d.updated ?? d.date),
+  author: { "@type": "Organization", name: "Wahlstrom Digital" },
+  publisher: { "@type": "Organization", name: "Wahlstrom Digital" },
+});
+---
+<Base title={`${d.title} – ShakeFree Mouse`} description={d.description} path={"/" + post.id} current="blog" mainClass="wrap narrow prose">
+<Fragment slot="head-meta">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ShakeFree Mouse">
+<meta property="og:title" content={d.title}>
+<meta property="og:description" content={d.summary}>
+<meta property="og:url" content={url}>
+<meta property="og:image" content="https://shakefreemouse.com/images/share.jpg">
+<script type="application/ld+json" set:html={structured}></script>
+</Fragment>
+  <article>
+    <h1>{d.title}</h1>
+    <p class="small">{longDate(d.date)} · {d.readTime} minute read</p>
+    <figure class="photo article-photo">
+      <img src={d.image} width={d.imageWidth} height={d.imageHeight} alt={d.imageAlt}>
+    </figure>
+
+    <p class="lead">{d.lead}</p>
+
+    <Content />
+  </article>
+
+  <div class="card" style="margin-top: 3rem">
+    <h2>Try ShakeFree Mouse free for 5 days</h2>
+    <p>Everything included, no card needed.</p>
+    <div class="buttons">
+      <a class="button" href={STORE}>Download from Microsoft Store</a>
+      <a class="button secondary" href={BUY}>Buy now</a>
+    </div>
+  </div>
+  <p><a href="blog.html">← All guides</a></p>
+</Base>

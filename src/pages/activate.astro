@@ -1,32 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+---
+import Base from "../layouts/Base.astro";
+import { STORE, BUY } from "../links";
+---
+<Base title="Activate ShakeFree Mouse" mainClass="wrap narrow prose">
+<Fragment slot="head-meta">
 <!-- The licence key is in this page's address: never let it leave the browser (no analytics, no outside files, no referrer). -->
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex">
-<title>Activate ShakeFree Mouse</title>
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap">
-  <a class="brand" href="index.html">
-    <img src="icon.svg" alt="">
-    ShakeFree Mouse
-  </a>
-  <nav aria-label="Main">
-    <a href="index.html#how">How it helps</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="blog.html">Blog</a>
-    <a href="support.html">Help</a>
-    <a class="button" href="https://apps.microsoft.com/">Try it free</a>
-  </nav>
-</div></header>
-
-<main id="main" class="wrap narrow prose">
+</Fragment>
   <div id="has-key" hidden>
     <h1>Thank you! Let’s activate ShakeFree Mouse</h1>
     <p class="lead">If ShakeFree Mouse is installed, it opens and activates by itself. If your browser asks “Open ShakeFree Mouse?”, click <strong>Open</strong>.</p>
@@ -58,8 +39,7 @@
       <h2>Don’t have it yet?</h2>
       <p>ShakeFree Mouse is downloaded free from Microsoft Store.</p>
       <div class="buttons">
-        <!-- MICROSOFT STORE LINK: replace with the app's Store listing -->
-        <a class="button" href="https://apps.microsoft.com/">Download from Microsoft Store</a>
+        <a class="button" href={STORE}>Download from Microsoft Store</a>
       </div>
       <ol class="steps">
         <li>Install ShakeFree Mouse from Microsoft Store.</li>
@@ -75,26 +55,11 @@
     <h1>No key found</h1>
     <p class="lead">This page didn’t receive a licence key.</p>
     <p>Please open your receipt email from Lemon Squeezy and click <strong>Activate</strong> there, or copy the key from the email into ShakeFree Mouse: open it from the tray, click <strong>Enter key</strong>, then <strong>Activate</strong>.</p>
-    <p>Don’t have the app yet? <a href="https://apps.microsoft.com/">Download it free from Microsoft Store</a> first.</p>
+    <p>Don’t have the app yet? <a href={STORE}>Download it free from Microsoft Store</a> first.</p>
     <p>Can’t find the email? <a href="support.html">Contact us</a> and we’ll help.</p>
   </div>
-</main>
-
-<footer><div class="wrap">
-  <div>
-    <p class="name">ShakeFree Mouse</p>
-    <p>An assistive app for steadier pointing. It is not a medical treatment.</p>
-    <p>© 2026 Wahlstrom Digital</p>
-  </div>
-  <nav class="links" aria-label="Footer">
-    <a href="blog.html">Blog</a>
-    <a href="support.html">Help &amp; contact</a>
-    <a href="privacy.html">Privacy policy</a>
-    <a href="terms.html">Terms &amp; refunds</a>
-  </nav>
-</div></footer>
-
-<script>
+<Fragment slot="end">
+<script is:inline>
 (function () {
   var key = (new URLSearchParams(location.search).get("key") || "").trim();
   if (!key) { document.getElementById("no-key").hidden = false; return; }
@@ -128,5 +93,5 @@
   location.href = appLink;
 })();
 </script>
-</body>
-</html>
+</Fragment>
+</Base>

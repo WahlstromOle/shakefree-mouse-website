@@ -1,0 +1,23 @@
+---
+// The Blog page lists every published article by itself, newest first
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { longDate } from "../dates";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Blog – ShakeFree Mouse" description="Practical guides for using a computer with a hand tremor: steadier pointing, easier clicking and Windows settings that help." path="/blog" current="blog" mainClass="wrap narrow prose">
+  <h1>Blog</h1>
+  <p class="lead">Practical guides for using a computer with a hand tremor: steadier pointing, easier clicking, and the Windows settings that help.</p>
+
+  {posts.map((post) => (
+    <div class="card">
+      <h2><a href={`${post.id}.html`}>{post.data.title}</a></h2>
+      <p class="small">{longDate(post.data.date)} · {post.data.readTime} minute read</p>
+      <p>{post.data.summary}</p>
+    </div>
+  ))}
+
+  <p class="muted">Have a question you’d like a guide on? <a href="support.html">Tell us</a>.</p>
+</Base>

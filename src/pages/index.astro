@@ -1,21 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ShakeFree Mouse – steady cursor for shaky hands</title>
-<meta name="description" content="ShakeFree Mouse is a small Windows app that smooths hand tremor before it reaches the mouse pointer. Download it from Microsoft Store and try it free for 5 days.">
-<link rel="canonical" href="https://shakefreemouse.com/">
+---
+import Base from "../layouts/Base.astro";
+import { STORE, BUY } from "../links";
+---
+<Base title="ShakeFree Mouse – steady cursor for shaky hands" description="ShakeFree Mouse is a small Windows app that smooths hand tremor before it reaches the mouse pointer. Download it from Microsoft Store and try it free for 5 days." path="/" current="home">
+<Fragment slot="head-meta">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ShakeFree Mouse">
 <meta property="og:title" content="ShakeFree Mouse – steady cursor for shaky hands">
 <meta property="og:description" content="A small Windows app that smooths hand tremor before it reaches the mouse pointer.">
 <meta property="og:url" content="https://shakefreemouse.com/">
 <meta property="og:image" content="https://shakefreemouse.com/images/share.jpg">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
+</Fragment>
+<Fragment slot="head-early">
 <link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="style.css">
-<script>
+</Fragment>
+<Fragment slot="head">
+<script is:inline>
 // Calm entrance animations, unless animations are switched off in Windows. If anim.js never runs, show everything.
 (function () {
   var r = document.documentElement;
@@ -25,8 +25,8 @@
   }
 })();
 </script>
-<script src="anim.js" defer></script>
-<script type="application/ld+json">
+<script is:inline src="anim.js" defer></script>
+<script type="application/ld+json" is:inline>
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -43,25 +43,7 @@
   ]
 }
 </script>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header><div class="wrap">
-  <a class="brand" href="index.html">
-    <img src="icon.svg" alt="">
-    ShakeFree Mouse
-  </a>
-  <nav aria-label="Main">
-    <a href="#how">How it helps</a>
-    <a href="#demo">Demo</a>
-    <a href="#pricing">Pricing</a>
-    <a href="blog.html">Blog</a>
-    <a href="support.html">Help</a>
-    <a class="button" href="https://apps.microsoft.com/">Try it free</a>
-  </nav>
-</div></header>
-
-<main id="main">
+</Fragment>
 
   <!-- 1. The problem, in the visitor's own words -->
   <div class="wrap">
@@ -71,9 +53,8 @@
         <h1 id="hero-title">You know where you want to click. Your hand doesn’t agree.</h1>
         <p class="lead"><strong>ShakeFree Mouse</strong> is a small Windows app that steadies your pointer, so it lands where you aim.</p>
         <div class="buttons">
-          <!-- MICROSOFT STORE LINK: replace https://apps.microsoft.com/ with the app's Store listing (3 places on this page) -->
-          <a class="button" href="https://apps.microsoft.com/">Download from Microsoft Store</a>
-          <a class="button secondary" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de">Buy now</a>
+          <a class="button" href={STORE}>Download from Microsoft Store</a>
+          <a class="button secondary" href={BUY}>Buy now</a>
         </div>
         <p class="small">For Windows · Try everything free for 5 days, no card needed</p>
       </div>
@@ -279,15 +260,13 @@
         <p class="muted">Start with a 5-day free trial, then pick the plan that suits you.</p>
       </div>
       <div class="pricing">
-        <!-- PLAN LINKS: each button opens the checkout. To open it on that plan, replace the link with the plan's own
-             checkout link (Lemon Squeezy > Products > ShakeFree Mouse > the plan's Share link). -->
         <div class="plan">
           <h3>Monthly</h3>
           <div class="price">$4</div>
           <div class="per">per month</div>
           <p class="best">Best if you want to keep it flexible.</p>
           <p class="billing">Renews monthly. Cancel any time.</p>
-          <a class="button secondary" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de" aria-label="Buy the Monthly plan">Choose Monthly</a>
+          <a class="button secondary" href={BUY} aria-label="Buy the Monthly plan">Choose Monthly</a>
         </div>
         <div class="plan featured">
           <div class="plan-top"><h3>Yearly</h3><span class="badge">Save 25%</span></div>
@@ -295,7 +274,7 @@
           <div class="per">per year · $3 a month</div>
           <p class="best">Best value for regular use.</p>
           <p class="billing">One payment a year. Cancel any time.</p>
-          <a class="button" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de" aria-label="Buy the Yearly plan">Choose Yearly</a>
+          <a class="button" href={BUY} aria-label="Buy the Yearly plan">Choose Yearly</a>
         </div>
         <div class="plan">
           <h3>Lifetime</h3>
@@ -303,7 +282,7 @@
           <div class="per">pay once</div>
           <p class="best">Best if you’ll use it for years.</p>
           <p class="billing">No renewals, ever.</p>
-          <a class="button secondary" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de" aria-label="Buy the Lifetime plan">Choose Lifetime</a>
+          <a class="button secondary" href={BUY} aria-label="Buy the Lifetime plan">Choose Lifetime</a>
         </div>
       </div>
       <h3 class="includes-title">Every plan includes</h3>
@@ -317,7 +296,7 @@
       </ul>
       <p class="small" style="margin-top: 2rem">You can buy here or later in the app. After buying, you get a key, a code that unlocks the app, by email. It fills itself in. The app itself is downloaded free from Microsoft Store, so you can try it first.</p>
       <div class="buttons" style="margin-top: 1.5rem">
-        <a class="button" href="https://apps.microsoft.com/">Download from Microsoft Store</a>
+        <a class="button" href={STORE}>Download from Microsoft Store</a>
       </div>
       <p class="small">Payments are handled securely by Lemon Squeezy. After paying, click <strong>Activate</strong> on the confirmation page and ShakeFree Mouse turns on by itself. Because you can try it free first, purchases aren’t refunded: see <a href="terms.html">Terms &amp; refunds</a>.</p>
     </div>
@@ -329,29 +308,13 @@
       <h2 id="get-title">Your hand can shake. Your pointer doesn’t have to.</h2>
       <p class="lead">Download ShakeFree Mouse from Microsoft Store and try everything free for 5 days.</p>
       <div class="buttons">
-        <a class="button" href="https://apps.microsoft.com/">Download from Microsoft Store</a>
-        <a class="button secondary" href="https://wahlstromdigital.lemonsqueezy.com/checkout/buy/f001f820-d070-4f01-9541-78478b83b3de">Buy now</a>
+        <a class="button" href={STORE}>Download from Microsoft Store</a>
+        <a class="button secondary" href={BUY}>Buy now</a>
       </div>
     </div>
   </section>
-
-</main>
-
-<footer><div class="wrap">
-  <div>
-    <p class="name">ShakeFree Mouse</p>
-    <p>An assistive app for steadier pointing. It is not a medical treatment.</p>
-    <p>© 2026 Wahlstrom Digital</p>
-  </div>
-  <nav class="links" aria-label="Footer">
-    <a href="blog.html">Blog</a>
-    <a href="support.html">Help &amp; contact</a>
-    <a href="privacy.html">Privacy policy</a>
-    <a href="terms.html">Terms &amp; refunds</a>
-  </nav>
-</div></footer>
-
-<script>
+<Fragment slot="end">
+<script is:inline>
 (function () {
   var pad = document.getElementById("sf-pad");
   var dot = document.getElementById("sf-dot");
@@ -441,5 +404,5 @@
   raf = requestAnimationFrame(tick);
 })();
 </script>
-</body>
-</html>
+</Fragment>
+</Base>
