@@ -11,6 +11,7 @@
 <meta property="og:title" content="ShakeFree Mouse – steady cursor for shaky hands">
 <meta property="og:description" content="A small Windows app that smooths hand tremor before it reaches the mouse pointer.">
 <meta property="og:url" content="https://shakefreemouse.com/">
+<meta property="og:image" content="https://shakefreemouse.com/images/share.jpg">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/figtree.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
@@ -65,19 +66,8 @@
         </div>
         <p class="small">For Windows · Try everything free for 5 days, no card needed</p>
       </div>
-      <figure class="hero-art missed" aria-hidden="true">
-        <svg viewBox="0 0 400 250" fill="none">
-          <rect x="1" y="1" width="398" height="248" rx="18" style="fill: var(--surface); stroke: var(--border)" stroke-width="2"/>
-          <line x1="1" y1="52" x2="399" y2="52" style="stroke: var(--border)" stroke-width="2"/>
-          <rect x="22" y="20" width="110" height="12" rx="6" style="fill: var(--sand)"/>
-          <path d="M282 27h16" style="stroke: var(--line)" stroke-width="2.5" stroke-linecap="round"/>
-          <rect x="314" y="20" width="14" height="14" rx="2" style="stroke: var(--line)" stroke-width="2.5"/>
-          <path d="M350 20l14 14M364 20l-14 14" style="stroke: var(--text)" stroke-width="2.5" stroke-linecap="round"/>
-          <polyline points="70,215 92,196 84,188 118,176 108,160 146,150 136,134 178,126 170,108 214,100 204,84 250,78 240,62 286,58 278,42 324,46 318,30 372,38 366,16 340,8 380,30 368,52" style="stroke: var(--line)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1 7"/>
-          <circle cx="357" cy="27" r="22" style="stroke: var(--accent)" stroke-width="2" stroke-dasharray="4 5"/>
-          <path d="M368 52v26l6.5-6 4.6 10 4.6-2.2-4.6-9.8h9z" style="fill: var(--text); stroke: var(--surface)" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
-        <figcaption>Aiming for the ✕ … and missing it again.</figcaption>
+      <figure class="photo hero-photo">
+        <img src="images/hand-on-mouse.webp" width="1448" height="1086" alt="An older hand resting on a computer mouse next to a laptop" fetchpriority="high">
       </figure>
     </section>
   </div>
@@ -85,9 +75,25 @@
   <!-- 2. Show we understand -->
   <section class="band alt" aria-labelledby="familiar-title">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Sound familiar?</p>
-        <h2 id="familiar-title">You’ve learned to work around it. You shouldn’t have to.</h2>
+      <div class="split familiar-head">
+        <div class="section-head">
+          <p class="eyebrow">Sound familiar?</p>
+          <h2 id="familiar-title">You’ve learned to work around it. You shouldn’t have to.</h2>
+        </div>
+        <figure class="hero-art missed" aria-hidden="true">
+          <svg viewBox="0 0 400 250" fill="none">
+            <rect x="1" y="1" width="398" height="248" rx="18" style="fill: var(--surface); stroke: var(--border)" stroke-width="2"/>
+            <line x1="1" y1="52" x2="399" y2="52" style="stroke: var(--border)" stroke-width="2"/>
+            <rect x="22" y="20" width="110" height="12" rx="6" style="fill: var(--sand)"/>
+            <path d="M282 27h16" style="stroke: var(--line)" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="314" y="20" width="14" height="14" rx="2" style="stroke: var(--line)" stroke-width="2.5"/>
+            <path d="M350 20l14 14M364 20l-14 14" style="stroke: var(--text)" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="70,215 92,196 84,188 118,176 108,160 146,150 136,134 178,126 170,108 214,100 204,84 250,78 240,62 286,58 278,42 324,46 318,30 372,38 366,16 340,8 380,30 368,52" style="stroke: var(--line)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1 7"/>
+            <circle cx="357" cy="27" r="22" style="stroke: var(--accent)" stroke-width="2" stroke-dasharray="4 5"/>
+            <path class="cursor" d="M368 52v26l6.5-6 4.6 10 4.6-2.2-4.6-9.8h9z" style="fill: var(--text); stroke: var(--surface)" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <figcaption>Aiming for the ✕ … and missing it again.</figcaption>
+        </figure>
       </div>
       <ul class="moments">
         <li>
@@ -111,7 +117,14 @@
           <span>Forms, bookings, online shopping: it’s just easier that way.</span>
         </li>
       </ul>
-      <p class="reassure">It’s not you. A mouse simply passes every small shake straight to the screen.</p>
+    </div>
+  </section>
+
+  <!-- The turn in the story: a bold blue moment -->
+  <section class="band blue statement" aria-label="It’s not you">
+    <svg class="edge" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48L0 9.0L16 35.1L32 10.7L48 35.3L64 12.3L80 35.4L96 13.9L112 35.5L128 15.4L144 35.4L160 16.7L176 35.3L192 17.9L208 35.0L224 18.9L240 34.6L256 19.7L272 34.0L288 20.3L304 33.2L320 20.7L336 32.3L352 20.9L368 31.3L384 21.0L400 30.1L416 20.9L432 28.8L448 20.7L464 27.5L480 20.4L496 26.1L512 19.9L528 24.6L544 19.5L560 23.2L576 19.0L592 21.9L608 18.5L624 20.6L640 18.1L656 19.5L672 17.7L688 18.5L704 17.5L720 17.8L736 17.3L752 17.2L768 17.1L784 17.0L800 17.0L816 17.0L832 17.1L848 17.2L864 17.3L880 17.5L896 17.8L912 18.0L928 18.3L944 18.7L960 19.0L976 19.4L992 19.8L1008 20.3L1024 20.7L1040 21.2L1056 21.6L1072 22.1L1088 22.6L1104 23.0L1120 23.5L1136 23.9L1152 24.4L1168 24.8L1184 25.1L1200 25.5L1200 48Z"/></svg>
+    <div class="wrap">
+      <p>It’s not you. A mouse simply passes every small shake straight to the screen.</p>
     </div>
   </section>
 
@@ -216,28 +229,33 @@
         <p class="eyebrow">The new everyday</p>
         <h2 id="after-title">Use your computer the way you want to.</h2>
       </div>
-      <ul class="moments after">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
-          <strong>Rest your hand, don’t brace it</strong>
-          <span>Let go of your wrist; the pointer stays put.</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
-          <strong>Click once, and it counts</strong>
-          <span>Close, open and choose on the first try.</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
-          <strong>Work at your own pace</strong>
-          <span>Click normally, without opening the wrong thing.</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
-          <strong>Do it yourself again</strong>
-          <span>Emails, forms, bookings and shopping, on your own terms.</span>
-        </li>
-      </ul>
+      <div class="split after-split">
+        <figure class="photo">
+          <img src="images/man-at-laptop.webp" width="1672" height="941" alt="An older man smiling as he works at his laptop at home" loading="lazy">
+        </figure>
+        <ul class="moments after">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
+            <strong>Rest your hand, don’t brace it</strong>
+            <span>Let go of your wrist; the pointer stays put.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
+            <strong>Click once, and it counts</strong>
+            <span>Close, open and choose on the first try.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
+            <strong>Work at your own pace</strong>
+            <span>Click normally, without opening the wrong thing.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="5,12.5 10,17 19,7"/></svg>
+            <strong>Do it yourself again</strong>
+            <span>Emails, forms, bookings and shopping, on your own terms.</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -294,7 +312,8 @@
     </div>
   </section>
 
-  <section id="get" class="band alt" aria-labelledby="get-title">
+  <section id="get" class="band blue" aria-labelledby="get-title">
+    <svg class="edge" viewBox="0 0 1200 48" preserveAspectRatio="none" aria-hidden="true"><path d="M0 48L0 9.0L16 35.1L32 10.7L48 35.3L64 12.3L80 35.4L96 13.9L112 35.5L128 15.4L144 35.4L160 16.7L176 35.3L192 17.9L208 35.0L224 18.9L240 34.6L256 19.7L272 34.0L288 20.3L304 33.2L320 20.7L336 32.3L352 20.9L368 31.3L384 21.0L400 30.1L416 20.9L432 28.8L448 20.7L464 27.5L480 20.4L496 26.1L512 19.9L528 24.6L544 19.5L560 23.2L576 19.0L592 21.9L608 18.5L624 20.6L640 18.1L656 19.5L672 17.7L688 18.5L704 17.5L720 17.8L736 17.3L752 17.2L768 17.1L784 17.0L800 17.0L816 17.0L832 17.1L848 17.2L864 17.3L880 17.5L896 17.8L912 18.0L928 18.3L944 18.7L960 19.0L976 19.4L992 19.8L1008 20.3L1024 20.7L1040 21.2L1056 21.6L1072 22.1L1088 22.6L1104 23.0L1120 23.5L1136 23.9L1152 24.4L1168 24.8L1184 25.1L1200 25.5L1200 48Z"/></svg>
     <div class="wrap narrow closing">
       <h2 id="get-title">Your hand can shake. Your pointer doesn’t have to.</h2>
       <p class="lead">Download ShakeFree Mouse from Microsoft Store and try everything free for 5 days.</p>

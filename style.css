@@ -141,7 +141,6 @@ footer .links a:hover { color: var(--text); }
   .split { gap: 2.5rem; }
   .moments li { padding: 1.25rem 1.5rem; }
 }
-.reassure { margin: 3.5rem 0 0; max-width: 40rem; font-size: clamp(1.5rem, 2.6vw, 1.875rem); line-height: 1.35; font-weight: 500; padding-left: 1.5rem; border-left: 4px solid var(--accent); }
 
 
 /* Home: live demo */
@@ -212,3 +211,42 @@ footer .links a:hover { color: var(--text); }
 .prose > h1:first-child, .prose > div > h1:first-child { margin-top: 3rem; font-size: clamp(2.25rem, 4.4vw, 3.25rem); }
 .card > :last-child { margin-bottom: 0; }
 .demo-note { margin: 1rem 0 0; }
+
+/* Bold blue moments, with a top edge that starts shaky and ends smooth */
+.band.blue { position: relative; background: var(--accent); color: #FFFFFF; }
+.band.blue .edge { position: absolute; left: 0; top: -47px; width: 100%; height: 48px; fill: var(--accent); }
+.band.blue .lead { color: rgba(255, 255, 255, 0.88); }
+.band.blue .button { background: #FFFFFF; border-color: #FFFFFF; color: var(--accent); }
+.band.blue .button:hover { background: var(--accent-soft); border-color: var(--accent-soft); color: var(--accent-hover); }
+.band.blue .button.secondary { background: transparent; border-color: rgba(255, 255, 255, 0.75); color: #FFFFFF; }
+.band.blue .button.secondary:hover { background: rgba(255, 255, 255, 0.12); color: #FFFFFF; }
+.band.blue :focus-visible { outline-color: #FFFFFF; }
+.statement p { margin: 0 auto; max-width: 46rem; text-align: center; font-size: clamp(1.75rem, 3.4vw, 2.625rem); line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; }
+
+/* The pointer in the hero drawing keeps trying for the ✕ */
+.missed .cursor { transform-box: fill-box; animation: jitter 2.6s ease-in-out infinite; }
+@keyframes jitter {
+  0%, 55%, 100% { transform: translate(0, 0); }
+  60% { transform: translate(-3px, 2px); }
+  66% { transform: translate(4px, -3px); }
+  72% { transform: translate(-2px, -2px); }
+  78% { transform: translate(3px, 3px); }
+  84% { transform: translate(-1px, 1px); }
+}
+@media (prefers-reduced-motion: reduce) { .missed .cursor { animation: none; } }
+
+/* Photos */
+.photo { margin: 0; }
+.photo img { display: block; width: 100%; height: auto; border-radius: 2rem; }
+.hero-photo { flex: 1 1 22rem; min-width: 0; }
+.hero-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
+.split > figure { flex: 1 1 22rem; min-width: 0; }
+.familiar-head { margin-bottom: 3.5rem; }
+.familiar-head .section-head { margin-bottom: 0; }
+.familiar-head > figure { flex: 0 1 20rem; margin-left: auto; }
+.after-split { align-items: center; }
+.after-split > figure { flex: 1 1 26rem; }
+.after-split img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 60% center; }
+.after-split > .moments { flex: 1 1 28rem; min-width: 0; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.article-photo { margin: 1.5rem 0 2rem; }
+.article-photo img { aspect-ratio: 16 / 9; object-fit: cover; }
