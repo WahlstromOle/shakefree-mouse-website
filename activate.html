@@ -29,14 +29,10 @@
 <main id="main" class="wrap narrow prose">
   <div id="has-key" hidden>
     <h1>Thank you! Let’s activate ShakeFree Mouse</h1>
-    <p class="lead">ShakeFree Mouse should open and activate by itself. If your browser asks “Open ShakeFree Mouse?”, click <strong>Open</strong>.</p>
-
-    <div class="buttons">
-      <a class="button" id="open" href="#">Open ShakeFree Mouse</a>
-    </div>
+    <p class="lead">If ShakeFree Mouse is installed, it opens and activates by itself. If your browser asks “Open ShakeFree Mouse?”, click <strong>Open</strong>.</p>
 
     <div class="card">
-      <h2 style="margin-top:0">Your key</h2>
+      <h2>Your key</h2>
       <p class="key" id="key"></p>
       <div class="buttons">
         <button class="button secondary" id="copy" type="button">Copy key</button>
@@ -44,20 +40,42 @@
       <p class="status" id="status" role="status" aria-live="polite"></p>
     </div>
 
-    <h2>If it didn’t open by itself</h2>
-    <ol class="steps">
-      <li>Click <strong>Copy key</strong> above.</li>
-      <li>Open ShakeFree Mouse from the tray: the round blue icon by the clock (click the <strong>^</strong> arrow if you can’t see it).</li>
-      <li>Click <strong>Enter key</strong>. The key fills in by itself.</li>
-      <li>Click <strong>Activate</strong>.</li>
-    </ol>
-    <p class="muted">Your key is also in your receipt email. It works on up to 3 PCs.</p>
+    <div class="card">
+      <h2>Already have ShakeFree Mouse?</h2>
+      <div class="buttons">
+        <a class="button" id="open" href="#">Open ShakeFree Mouse</a>
+      </div>
+      <p>If nothing happens:</p>
+      <ol class="steps">
+        <li>Click <strong>Copy key</strong> above.</li>
+        <li>Open ShakeFree Mouse from the tray: the round blue icon by the clock (click the <strong>^</strong> arrow if you can’t see it).</li>
+        <li>Click <strong>Enter key</strong>. The key fills in by itself.</li>
+        <li>Click <strong>Activate</strong>.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Don’t have it yet?</h2>
+      <p>ShakeFree Mouse is downloaded free from Microsoft Store.</p>
+      <div class="buttons">
+        <!-- MICROSOFT STORE LINK: replace with the app's Store listing -->
+        <a class="button" href="https://apps.microsoft.com/">Download from Microsoft Store</a>
+      </div>
+      <ol class="steps">
+        <li>Install ShakeFree Mouse from Microsoft Store.</li>
+        <li>Come back to this page and click <strong>Open ShakeFree Mouse</strong>, or click <strong>Activate</strong> in your receipt email again. The app opens and activates by itself.</li>
+        <li>Or open the app, click <strong>Enter key</strong> and paste your key.</li>
+      </ol>
+    </div>
+
+    <p class="muted">Your key is also in your receipt email, so you can activate any time later. It works on up to 3 PCs.</p>
   </div>
 
   <div id="no-key" hidden>
     <h1>No key found</h1>
     <p class="lead">This page didn’t receive a licence key.</p>
     <p>Please open your receipt email from Lemon Squeezy and click <strong>Activate</strong> there, or copy the key from the email into ShakeFree Mouse: open it from the tray, click <strong>Enter key</strong>, then <strong>Activate</strong>.</p>
+    <p>Don’t have the app yet? <a href="https://apps.microsoft.com/">Download it free from Microsoft Store</a> first.</p>
     <p>Can’t find the email? <a href="support.html">Contact us</a> and we’ll help.</p>
   </div>
 </main>
