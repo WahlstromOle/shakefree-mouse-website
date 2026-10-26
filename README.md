@@ -16,7 +16,7 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com (hosted free on G
 
 ## Things to change later
 
-- **Microsoft Store link**: the “Get it from Microsoft Store” buttons (three in `index.html`, one at the end of each blog guide) point to `https://apps.microsoft.com/` for now. Replace that address with the app's own Store listing once it is published.
+- **Microsoft Store link**: the “Download from Microsoft Store” buttons and the “Try it free” button in every page's top menu point to `https://apps.microsoft.com/` for now. Replace that address with the app's own Store listing once it is published.
 - **Live Lemon Squeezy link**: the “Buy a key” and “Choose …” plan buttons (five in `index.html`, one at the end of each blog guide) point to the *test mode* checkout. Replace them with the live checkout link before release.
 - **Activation page must stay private**: `activate.html` must never get analytics, outside fonts or other outside files, because the licence key is in its address. This is also why the font is hosted on the site instead of loaded from Google Fonts.
 
