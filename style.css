@@ -76,9 +76,9 @@ footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 1r
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem 2rem; padding-top: 3rem; padding-bottom: 3.5rem; }
 footer p { margin: 0 0 0.4rem; }
 footer .name { color: var(--text); font-weight: 600; }
-footer .links { display: flex; flex-wrap: wrap; gap: 0 1.5rem; align-items: flex-start; }
-footer .links a { display: inline-block; padding: 0.6rem 0; color: var(--muted); }
-footer .links a:hover { color: var(--text); }
+footer .links { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; margin: -0.75rem -1rem 0; } /* the margin lines the text up with the edge despite the padding */
+footer .links a { display: inline-flex; align-items: center; min-height: 3rem; padding: 0.75rem 1rem; border-radius: 999px; color: var(--muted); }
+footer .links a:hover { color: var(--text); background: var(--sand); }
 
 /* Buttons: large, easy to hit */
 .button {

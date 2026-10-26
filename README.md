@@ -8,6 +8,7 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com (hosted free on G
 | `activate.html` | `/activate?key=...` | Lemon Squeezy's **Activate** button after buying links here; it opens the app with `shakefree://activate?key=...` and shows the key with a Copy button |
 | `privacy.html` | `/privacy` | Privacy policy (for the Microsoft Store listing) |
 | `support.html` | `/support` | Help & contact (for the Microsoft Store listing) |
+| `terms.html` | `/terms` | Terms & refunds (no refunds, because of the free trial) |
 | `style.css` | | Shared look (the app's blue on white, light mode only) |
 | `icon.svg` | | The app's blue pointer icon, used as the logo and the browser tab icon |
 | `fonts/` | | The Figtree font, hosted here so no outside files are loaded (licence in `OFL.txt`) |
