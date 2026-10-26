@@ -167,9 +167,9 @@
           <span>Switch off the mouse’s side buttons if you only ever hit them by mistake.</span>
         </li>
         <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v8"/><path d="M6.3 6.8a8 8 0 1 0 11.4 0"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="5" width="3" height="14" rx="1"/><rect x="14" y="5" width="3" height="14" rx="1"/></svg>
           <strong>Help when you want it, out of the way when you don’t</strong>
-          <span>Switch it on or off with Ctrl+Shift+F9, or pick your own shortcut.</span>
+          <span>Switch it on or off with one keyboard shortcut. Use the standard one, or choose your own.</span>
         </li>
         <li>
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
@@ -187,23 +187,25 @@
       <div class="section-head" style="margin-bottom: 3rem">
         <p class="eyebrow">Live demo</p>
         <h2 id="demo-title">Feel the difference.</h2>
-        <p class="muted">Move your pointer inside the box. Turn smoothing off to see a simulated tremor, then on again to watch it settle. This is a simulation in your browser; the app itself works across all of Windows.</p>
+        <p class="muted">Imagine reaching for that tiny ✕ and landing on it the first time. No bracing your wrist, no second try, no asking for help. This is what that feels like.</p>
       </div>
       <div class="demo-controls">
-        <button class="switch" id="sf-toggle" type="button" aria-pressed="true">
+        <button class="switch" id="sf-toggle" type="button" aria-pressed="false">
           <span class="track" aria-hidden="true"><span class="knob"></span></span>
-          <span id="sf-toggle-label">Smoothing is on</span>
+          <span id="sf-toggle-label">Turn on smoothing</span>
         </button>
         <label class="slider">
           <span>Tremor strength</span>
-          <input id="sf-strength" type="range" min="0" max="10" step="1" value="6">
+          <input id="sf-strength" type="range" min="0" max="10" step="1" value="5">
         </label>
       </div>
       <div class="pad" id="sf-pad">
         <div class="ring" aria-hidden="true"></div>
+        <div class="hand" id="sf-hand" aria-hidden="true"></div>
         <div class="dot" id="sf-dot" aria-hidden="true"><svg viewBox="0 0 20 28"><path d="M1.5 1.5v21.5l5.6-5.3 4 8.6 4-1.9-4-8.4h7.8z"/></svg></div>
         <p class="status" id="sf-status">Move your pointer into the box</p>
       </div>
+      <p class="small demo-note">The dot is a shaky hand, the arrow is your pointer. A simulation in your browser; the app itself works across all of Windows.</p>
     </div>
   </section>
 
@@ -311,14 +313,15 @@
 (function () {
   var pad = document.getElementById("sf-pad");
   var dot = document.getElementById("sf-dot");
+  var hand = document.getElementById("sf-hand");
   var toggle = document.getElementById("sf-toggle");
   var toggleLabel = document.getElementById("sf-toggle-label");
   var strength = document.getElementById("sf-strength");
   var status = document.getElementById("sf-status");
   var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var on = true, hover = false, visible = true, px = 50, py = 50;
-  var sm = { x: 50, y: 50 }, trail = [], frame = 0, raf = 0;
+  var on = false, hover = false, visible = true, px = 50, py = 50;
+  var base = { x: 50, y: 50 }, cur = { x: 50, y: 50 }, last = 0, trail = [], frame = 0, raf = 0;
 
   var dots = [];
   for (var i = 0; i < 12; i++) {
@@ -331,14 +334,14 @@
 
   function updateStatus() {
     status.textContent = hover
-      ? (on ? "Following your pointer, smoothed" : "Following your pointer, with simulated tremor")
+      ? (on ? "Smoothing on: the arrow stays steady while the hand shakes" : "The arrow shakes with the hand. Now turn on smoothing.")
       : "Move your pointer into the box";
   }
 
   toggle.addEventListener("click", function () {
     on = !on;
     toggle.setAttribute("aria-pressed", on ? "true" : "false");
-    toggleLabel.textContent = on ? "Smoothing is on" : "Smoothing is off";
+    toggleLabel.textContent = on ? "Smoothing is on" : "Turn on smoothing";
     updateStatus();
   });
 
@@ -360,14 +363,18 @@
     if (hover) { tx = px; ty = py; }
     else if (still) { tx = 50; ty = 50; }
     else { tx = 50 + 32 * Math.sin(t * 0.45); ty = 50 + 26 * Math.sin(t * 0.7 + 0.6); }
-    sm.x += (tx - sm.x) * 0.1;
-    sm.y += (ty - sm.y) * 0.1;
-    var x = sm.x, y = sm.y;
-    if (!on) {
-      x += k * 0.45 * (Math.sin(t * 29) * 0.6 + Math.sin(t * 43 + 1.3) * 0.4) + (Math.random() - 0.5) * k * 0.25;
-      y += k * 0.45 * (Math.sin(t * 33 + 0.7) * 0.6 + Math.sin(t * 51 + 2.1) * 0.4) + (Math.random() - 0.5) * k * 0.25;
-    }
-    x = clamp(x); y = clamp(y);
+    // The hand always shakes (as much as the slider says); smoothing filters that shake out of the pointer
+    base.x += (tx - base.x) * 0.3;
+    base.y += (ty - base.y) * 0.3;
+    var hx = clamp(base.x + k * 0.45 * (Math.sin(t * 29) * 0.6 + Math.sin(t * 43 + 1.3) * 0.4) + (Math.random() - 0.5) * k * 0.25);
+    var hy = clamp(base.y + k * 0.45 * (Math.sin(t * 33 + 0.7) * 0.6 + Math.sin(t * 51 + 2.1) * 0.4) + (Math.random() - 0.5) * k * 0.25);
+    var dt = last ? Math.min(t - last, 0.1) : 0.016, a = on ? 1 - Math.exp(-dt / 0.12) : 1;
+    last = t;
+    cur.x += (hx - cur.x) * a;
+    cur.y += (hy - cur.y) * a;
+    var x = cur.x, y = cur.y;
+    hand.style.left = hx + "%";
+    hand.style.top = hy + "%";
     dot.style.left = x + "%";
     dot.style.top = y + "%";
     if (++frame % 3 === 0) {

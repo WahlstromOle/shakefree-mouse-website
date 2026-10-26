@@ -155,11 +155,13 @@ footer .links a:hover { color: var(--text); }
 .slider input { width: 13.75rem; height: 2.75rem; accent-color: var(--accent); }
 .pad { position: relative; height: 26rem; border-radius: 2rem; background: var(--sand); overflow: hidden; cursor: crosshair; touch-action: none; }
 .pad .ring { position: absolute; left: 50%; top: 50%; width: 7.5rem; height: 7.5rem; margin: -3.75rem 0 0 -3.75rem; border-radius: 999px; border: 1.5px dashed var(--border-strong); }
-.pad .dot, .pad .trail { position: absolute; left: 0; top: 0; pointer-events: none; }
+.pad .dot, .pad .trail, .pad .hand { position: absolute; left: 0; top: 0; pointer-events: none; }
+/* The simulated shaky hand: a grey dot, like "Try it" in the app */
+.pad .hand { width: 1rem; height: 1rem; margin: -0.5rem 0 0 -0.5rem; border-radius: 999px; background: var(--line); opacity: 0.7; }
 /* The moving cursor: an arrow whose tip sits exactly on the smoothed position */
 .pad .dot { width: 1.75rem; height: 2.45rem; margin: -0.13rem 0 0 -0.13rem; filter: drop-shadow(0 2px 3px rgba(21, 23, 43, 0.3)); }
 .pad .dot svg { display: block; width: 100%; height: 100%; fill: var(--accent); stroke: #FFFFFF; stroke-width: 1.5; stroke-linejoin: round; }
-.pad .trail { width: 0.625rem; height: 0.625rem; margin: -0.3125rem 0 0 -0.3125rem; border-radius: 999px; background: var(--accent); }
+.pad .trail { width: 0.625rem; height: 0.625rem; margin: -0.3125rem 0 0 -0.3125rem; border-radius: 999px; background: var(--line); }
 .pad .status { position: absolute; left: 1.75rem; bottom: 1.25rem; margin: 0; font-size: 0.9375rem; color: var(--muted); min-height: 0; font-weight: 400; }
 @media (max-width: 40rem) { .pad { height: 18rem; } }
 
@@ -206,3 +208,4 @@ footer .links a:hover { color: var(--text); }
 
 .prose > h1:first-child, .prose > div > h1:first-child { margin-top: 3rem; font-size: clamp(2.25rem, 4.4vw, 3.25rem); }
 .card > :last-child { margin-bottom: 0; }
+.demo-note { margin: 1rem 0 0; }
