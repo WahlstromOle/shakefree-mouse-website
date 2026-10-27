@@ -1,23 +1,51 @@
 ---
-// The Blog page lists every published article by itself, newest first
-import { getCollection } from "astro:content";
+// The Blog page: "Start here" (articles marked featured), then one shelf per topic with its newest guides.
+// Everything is filled in from the articles themselves; topics without articles yet are left out.
 import Base from "../layouts/Base.astro";
+import PostList from "../components/PostList.astro";
+import { TOPICS } from "../topics";
+import { publishedPosts } from "../posts";
 import { longDate } from "../dates";
 
-const posts = (await getCollection("blog", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const SHELF = 4; // guides shown per topic before "See all"
+const posts = await publishedPosts();
+const featured = posts.filter((p) => p.data.featured).slice(0, 3);
+const shelves = TOPICS.map((t) => ({ ...t, posts: posts.filter((p) => p.data.topic === t.id) }))
+  .filter((t) => t.posts.length > 0);
 ---
-<Base title="Blog – ShakeFree Mouse" description="Practical guides for using a computer with a hand tremor: steadier pointing, easier clicking and Windows settings that help." path="/blog" current="blog" mainClass="wrap narrow prose">
-  <h1>Blog</h1>
-  <p class="lead">Practical guides for using a computer with a hand tremor: steadier pointing, easier clicking, and the Windows settings that help.</p>
+<Base title="Blog – ShakeFree Mouse" description="Practical guides for using a computer with a hand tremor: steadier pointing, easier clicking and Windows settings that help." path="/blog" current="blog" mainClass="wrap blog">
+  <div class="narrow prose blog-head">
+    <h1>Blog</h1>
+    <p class="lead">Practical guides for using a computer with a hand tremor: steadier pointing, easier clicking, and the Windows settings that help.</p>
+  </div>
 
-  {posts.map((post) => (
-    <div class="card">
-      <h2><a href={`${post.id}.html`}>{post.data.title}</a></h2>
-      <p class="small">{longDate(post.data.date)} · {post.data.readTime} minute read</p>
-      <p>{post.data.summary}</p>
-    </div>
+  {featured.length > 0 && (
+    <section class="start-here" aria-labelledby="start-title">
+      <h2 id="start-title">Start here</h2>
+      <ul class="feature-cards">
+        {featured.map((post) => (
+          <li>
+            <a href={`/${post.id}`}>
+              <img src={`/${post.data.image}`} width={post.data.imageWidth} height={post.data.imageHeight} alt="" loading="lazy">
+              <strong>{post.data.title}</strong>
+              <small>{longDate(post.data.date)} · {post.data.readTime} minute read</small>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {shelves.map((t) => (
+    <section class="shelf" aria-labelledby={`shelf-${t.id}`}>
+      <div class="shelf-head">
+        <h2 id={`shelf-${t.id}`}>{t.name}</h2>
+        <a class="see-all" href={`/topics/${t.id}`}>See all {t.posts.length} {t.posts.length === 1 ? "guide" : "guides"} →</a>
+      </div>
+      <p class="muted">{t.intro}</p>
+      <PostList posts={t.posts.slice(0, SHELF)} />
+    </section>
   ))}
 
-  <p class="muted">Have a question you’d like a guide on? <a href="support.html">Tell us</a>.</p>
+  <p class="muted blog-ask">Have a question you’d like a guide on? <a href="/support">Tell us</a>.</p>
 </Base>

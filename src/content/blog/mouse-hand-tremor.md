@@ -3,6 +3,8 @@ title: How to make your mouse easier to use with a hand tremor
 description: "Practical ways to make a computer mouse easier to use with a hand tremor: Windows settings, a steadier way to sit, mice that help, and software that smooths the pointer."
 summary: Windows settings, a steadier way to sit, mice that help, and software that smooths the pointer.
 keyword: mouse hand tremor
+topic: computer-setup
+featured: true
 date: 2026-10-25
 readTime: 6
 image: images/hand-on-mouse.webp

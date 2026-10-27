@@ -1,6 +1,7 @@
 ---
 import { STORE } from "../links";
 // The frame every page shares: <head>, the top menu and the footer. Change the menu or footer here only.
+// Links start with / so they work from any page, including /topics/…
 interface Props {
   title: string;
   description?: string;
@@ -9,7 +10,7 @@ interface Props {
   mainClass?: string;
 }
 const { title, description, path, current, mainClass } = Astro.props;
-const home = current === "home" ? "" : "index.html"; // on the home page the menu just scrolls
+const home = current === "home" ? "" : "/"; // on the home page the menu just scrolls
 ---
 <!doctype html>
 <html lang="en">
@@ -20,16 +21,16 @@ const home = current === "home" ? "" : "index.html"; // on the home page the men
 {description && <meta name="description" content={description}>}
 {path && <link rel="canonical" href={new URL(path, Astro.site).href}>}
 <slot name="head-meta" />
-<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
 <slot name="head-early" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/style.css">
 <slot name="head" />
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header><div class="wrap">
-  <a class="brand" href="index.html">
-    <img src="icon.svg" alt="">
+  <a class="brand" href="/">
+    <img src="/icon.svg" alt="">
     ShakeFree Mouse
   </a>
   <nav aria-label="Main">
@@ -42,8 +43,8 @@ const home = current === "home" ? "" : "index.html"; // on the home page the men
       <a href={`${home}#how`}>How it helps</a>
       {current === "home" && <a href="#demo">Demo</a>}
       <a href={`${home}#pricing`}>Pricing</a>
-      <a href="blog.html" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
-      <a href="support.html" aria-current={current === "help" ? "page" : undefined}>Help</a>
+      <a href="/blog" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
+      <a href="/support" aria-current={current === "help" ? "page" : undefined}>Help</a>
       <a class="button menu-try" href={STORE}>Try it free</a>
     </div>
     <a class="button header-try" href={STORE}>Try it free</a>
@@ -77,10 +78,10 @@ const home = current === "home" ? "" : "index.html"; // on the home page the men
     <p>© 2026 Wahlstrom Digital</p>
   </div>
   <nav class="links" aria-label="Footer">
-    <a href="blog.html">Blog</a>
-    <a href="support.html">Help &amp; contact</a>
-    <a href="privacy.html" aria-current={current === "privacy" ? "page" : undefined}>Privacy policy</a>
-    <a href="terms.html" aria-current={current === "terms" ? "page" : undefined}>Terms &amp; refunds</a>
+    <a href="/blog">Blog</a>
+    <a href="/support">Help &amp; contact</a>
+    <a href="/privacy" aria-current={current === "privacy" ? "page" : undefined}>Privacy policy</a>
+    <a href="/terms" aria-current={current === "terms" ? "page" : undefined}>Terms &amp; refunds</a>
   </nav>
 </div></footer>
 <slot name="end" />

@@ -1,14 +1,17 @@
 // The list of pages for search engines, with every published article added automatically.
 // The activation page is left out on purpose (robots.txt also keeps it out of search results).
-import { getCollection } from "astro:content";
+import { TOPICS } from "../topics";
+import { publishedPosts } from "../posts";
 import { isoDate } from "../dates";
 
 const pages = ["/", "/blog", "/support", "/privacy", "/terms"];
 
 export async function GET({ site }: { site: URL }) {
-  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  const posts = await publishedPosts();
+  const topics = TOPICS.filter((t) => posts.some((p) => p.data.topic === t.id));
   const urls = [
     ...pages.map((p) => `  <url><loc>${new URL(p, site).href}</loc></url>`),
+    ...topics.map((t) => `  <url><loc>${new URL("/topics/" + t.id, site).href}</loc></url>`),
     ...posts.map((post) =>
       `  <url><loc>${new URL("/" + post.id, site).href}</loc><lastmod>${isoDate(post.data.updated ?? post.data.date)}</lastmod></url>`),
   ];

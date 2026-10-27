@@ -1,0 +1,22 @@
+---
+// One page per topic (only for topics that have articles), at shakefreemouse.com/topics/<id>
+import Base from "../../layouts/Base.astro";
+import PostList from "../../components/PostList.astro";
+import { TOPICS } from "../../topics";
+import { publishedPosts } from "../../posts";
+
+export async function getStaticPaths() {
+  const posts = await publishedPosts();
+  return TOPICS.map((t) => ({ params: { topic: t.id }, props: { t, posts: posts.filter((p) => p.data.topic === t.id) } }))
+    .filter((page) => page.props.posts.length > 0);
+}
+
+const { t, posts } = Astro.props;
+---
+<Base title={`${t.name} – ShakeFree Mouse guides`} description={t.intro} path={`/topics/${t.id}`} current="blog" mainClass="wrap narrow prose">
+  <p class="small topic-crumb"><a href="/blog">Blog</a> › {t.name}</p>
+  <h1>{t.name}</h1>
+  <p class="lead">{t.intro}</p>
+  <PostList posts={posts} />
+  <p><a href="/blog">← All topics</a></p>
+</Base>

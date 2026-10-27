@@ -294,3 +294,33 @@ html.anim .photo img { transform: scale(1.08); will-change: transform; }
 .hero h1 .w > span { display: inline-block; }
 html.anim .hero h1 .w > span { transform: translateY(110%); transition: transform 0.9s var(--ease-out); transition-delay: var(--d, 0s); }
 html.anim .hero h1.in .w > span { transform: none; }
+
+/* Blog: Start here, topic shelves, topic pages and Related guides */
+.blog { max-width: 62rem; }
+.blog-head { margin: 0 0 1rem; padding: 0; }
+.blog h2 { font-size: 1.75rem; margin: 0; }
+.start-here, .shelf { margin-top: 3.5rem; }
+.feature-cards { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
+.feature-cards li { margin: 0; }
+.feature-cards a { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; padding: 0 0 1.25rem; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--surface); overflow: hidden; color: var(--text); text-decoration: none; }
+.feature-cards a:hover { border-color: var(--accent); }
+.feature-cards img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 0.5rem; }
+.feature-cards strong, .feature-cards small { padding: 0 1.25rem; }
+.feature-cards strong { font-size: 1.2rem; font-weight: 600; line-height: 1.35; }
+.feature-cards small, .post-list small { color: var(--muted); font-size: 0.95rem; }
+.shelf-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; }
+.see-all { display: inline-flex; align-items: center; min-height: 3rem; font-weight: 600; }
+.shelf > .muted { margin: 0.25rem 0 1rem; }
+.post-list { list-style: none; margin: 1rem 0 2rem; padding: 0; border-top: 1px solid var(--border); }
+.post-list li { margin: 0; border-bottom: 1px solid var(--border); }
+.post-list a { display: flex; flex-direction: column; gap: 0.3rem; padding: 1.1rem 1rem; margin: 0 -1rem; border-radius: 1rem; color: var(--text); text-decoration: none; }
+.post-list a:hover { background: var(--sand); }
+.post-list strong { font-size: 1.2rem; font-weight: 600; line-height: 1.35; color: var(--accent); }
+.post-list span { color: var(--muted); }
+.topic-crumb { margin: 3rem 0 0.5rem; }
+.topic-crumb + h1 { margin-top: 0; }
+.prose > .topic-crumb + h1 { font-size: clamp(2.25rem, 4.4vw, 3.25rem); }
+.topic-crumb a { display: inline-block; padding: 0.4rem 0; }
+.related { margin-top: 3rem; }
+.related h2 { margin-top: 0; }
+.blog-ask { margin-top: 3rem; }

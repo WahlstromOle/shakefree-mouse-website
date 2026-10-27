@@ -11,9 +11,11 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astr
 | `src/pages/support.astro` | `/support` | Help & contact (for the Microsoft Store listing) |
 | `src/pages/privacy.astro` | `/privacy` | Privacy policy (for the Microsoft Store listing) |
 | `src/pages/terms.astro` | `/terms` | Terms & refunds (no refunds, because of the free trial) |
-| `src/pages/blog.astro` | `/blog` | Lists every published article by itself, newest first |
+| `src/pages/blog.astro` | `/blog` | "Start here" (featured articles), then a shelf per topic with its 4 newest guides; filled in by itself |
+| `src/pages/topics/[topic].astro` | `/topics/<id>` | One page per topic listing all its guides (only topics that have articles) |
+| `src/topics.ts` | | The four topics: Computer setup, Tools and devices, About tremor, Everyday life |
 | `src/content/blog/*.md` | `/<file name>` | The articles, one Markdown file each |
-| `src/pages/[slug].astro` | | The page layout every article uses (photo, text, closing Download/Buy box) |
+| `src/pages/[slug].astro` | | The page layout every article uses (topic link, photo, text, Download/Buy box, Related guides) |
 | `src/pages/sitemap.xml.ts` | `/sitemap.xml` | The page list for search engines; articles are added by themselves |
 | `src/layouts/Base.astro` | | The top menu, footer and `<head>` shared by every page: change them here only |
 | `src/links.ts` | | The Microsoft Store and Lemon Squeezy checkout links used by every button |
@@ -26,11 +28,11 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astr
 ## Adding an article
 
 1. Add a Markdown file to `src/content/blog/`, e.g. `essential-tremor-computer.md`. The file name becomes the address: `shakefreemouse.com/essential-tremor-computer`.
-2. Start it with the details between `---` lines, copied from `mouse-hand-tremor.md` (title, description, summary, keyword, date, readTime, image and its size and description, lead). `draft: true` keeps it unpublished.
+2. Start it with the details between `---` lines, copied from `mouse-hand-tremor.md` (title, description, summary, keyword, topic, date, readTime, image and its size and description, lead). `topic` is one of `computer-setup`, `tools-and-devices`, `about-tremor`, `everyday-life`. `featured: true` puts it in "Start here" (keep that to about 3). `draft: true` keeps it unpublished. Put a title containing a colon in quotes.
 3. Write the text in Markdown: `## Heading`, `- list item`, `**bold**`, `[link text](page.html)`.
 4. Put its photo in `public/images/`.
 
-The Blog page, the sitemap and the article's page are all made from that file. Don't put prices in articles; link to the home page's pricing instead.
+The Blog page, its topic shelf and topic page, Related guides, the sitemap and the article's page are all made from that file. Don't put prices in articles; link to the home page's pricing instead.
 
 ## Trying it on this PC
 

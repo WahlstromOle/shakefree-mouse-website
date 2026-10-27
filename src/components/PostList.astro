@@ -1,0 +1,19 @@
+---
+// A compact list of articles: each whole row is one large link
+import type { CollectionEntry } from "astro:content";
+import { longDate } from "../dates";
+
+interface Props { posts: CollectionEntry<"blog">[] }
+const { posts } = Astro.props;
+---
+<ul class="post-list">
+  {posts.map((post) => (
+    <li>
+      <a href={`/${post.id}`}>
+        <strong>{post.data.title}</strong>
+        <span>{post.data.summary}</span>
+        <small>{longDate(post.data.date)} · {post.data.readTime} minute read</small>
+      </a>
+    </li>
+  ))}
+</ul>
