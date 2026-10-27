@@ -69,6 +69,27 @@ nav a:hover { color: var(--text); background: var(--sand); }
 nav a[aria-current="page"] { font-weight: 600; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 0.4em; }
 nav a.button { color: var(--on-accent); padding: 0 1.4rem; min-height: 3rem; font-size: 1rem; }
 nav a.button:hover { background: var(--accent-hover); }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; }
+header .menu-toggle, header .menu-try { display: none; }
+.brand, header nav a { white-space: nowrap; }
+header { position: relative; }
+
+/* Small screens: logo, "Try it free" and a Menu button on one row; the links open below */
+@media (max-width: 56rem) {
+  header .wrap { flex-wrap: nowrap; padding-top: 1rem; padding-bottom: 1rem; }
+  html.js-menu header nav { flex-wrap: nowrap; }
+  html.js-menu .menu-toggle { display: inline-flex; align-items: center; gap: 0.5rem; order: 2; min-height: 3rem; padding: 0 1rem; border: 1.5px solid var(--border-strong); border-radius: 999px; background: transparent; color: var(--text); font: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; }
+  html.js-menu .menu-toggle:hover { background: var(--sand); }
+  html.js-menu .menu-toggle svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  html.js-menu .nav-links { display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 20; flex-direction: column; align-items: stretch; gap: 0.25rem; padding: 0.75rem 1.5rem 1.25rem; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: 0 12px 24px rgba(21, 23, 43, 0.08); }
+  html.js-menu .menu-toggle[aria-expanded="true"] + .nav-links { display: flex; }
+  html.js-menu .nav-links a { min-height: 3.25rem; font-size: 1.125rem; }
+}
+/* Narrow phones: "Try it free" moves into the opened menu so the top row isn't cramped */
+@media (max-width: 30rem) {
+  html.js-menu .header-try { display: none; }
+  html.js-menu .nav-links a.menu-try { display: inline-flex; justify-content: center; margin-top: 0.5rem; color: var(--on-accent); }
+}
 
 main { padding: 1rem 0 4rem; }
 
@@ -224,14 +245,23 @@ footer .links a:hover { color: var(--text); background: var(--sand); }
 .statement p { margin: 0 auto; max-width: 46rem; text-align: center; font-size: clamp(1.75rem, 3.4vw, 2.625rem); line-height: 1.3; font-weight: 500; letter-spacing: -0.01em; }
 
 /* The pointer in the hero drawing keeps trying for the ✕ */
-.missed .cursor { transform-box: fill-box; animation: jitter 2.6s ease-in-out infinite; }
-@keyframes jitter {
-  0%, 55%, 100% { transform: translate(0, 0); }
-  60% { transform: translate(-3px, 2px); }
-  66% { transform: translate(4px, -3px); }
-  72% { transform: translate(-2px, -2px); }
-  78% { transform: translate(3px, 3px); }
-  84% { transform: translate(-1px, 1px); }
+/* The pointer circles the ✕ (about 11 left and 25 up from where it starts), crossing it but never stopping on it */
+.missed .cursor { transform-box: fill-box; animation: aim 4s ease-in-out infinite; }
+@keyframes aim {
+  0%   { transform: translate(0, 0); }
+  8%   { transform: translate(-30px, -8px); }
+  16%  { transform: translate(-40px, -32px); }
+  24%  { transform: translate(-16px, -50px); }
+  32%  { transform: translate(12px, -38px); }
+  38%  { transform: translate(-9px, -23px); }
+  45%  { transform: translate(-36px, -40px); }
+  53%  { transform: translate(-6px, -48px); }
+  61%  { transform: translate(14px, -18px); }
+  67%  { transform: translate(-13px, -27px); }
+  75%  { transform: translate(-32px, -46px); }
+  83%  { transform: translate(4px, -44px); }
+  91%  { transform: translate(9px, -10px); }
+  100% { transform: translate(0, 0); }
 }
 @media (prefers-reduced-motion: reduce) { .missed .cursor { animation: none; } }
 

@@ -33,14 +33,38 @@ const home = current === "home" ? "" : "index.html"; // on the home page the men
     ShakeFree Mouse
   </a>
   <nav aria-label="Main">
-    <a href={`${home}#how`}>How it helps</a>
-    {current === "home" && <a href="#demo">Demo</a>}
-    <a href={`${home}#pricing`}>Pricing</a>
-    <a href="blog.html" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
-    <a href="support.html" aria-current={current === "help" ? "page" : undefined}>Help</a>
-    <a class="button" href={STORE}>Try it free</a>
+    <!-- On small screens the links fold away behind this button (only once the script below runs) -->
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <span>Menu</span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href={`${home}#how`}>How it helps</a>
+      {current === "home" && <a href="#demo">Demo</a>}
+      <a href={`${home}#pricing`}>Pricing</a>
+      <a href="blog.html" aria-current={current === "blog" ? "page" : undefined}>Blog</a>
+      <a href="support.html" aria-current={current === "help" ? "page" : undefined}>Help</a>
+      <a class="button menu-try" href={STORE}>Try it free</a>
+    </div>
+    <a class="button header-try" href={STORE}>Try it free</a>
   </nav>
 </div></header>
+<script is:inline>
+// Small screens: open and close the menu; it closes again after picking a link or pressing Esc
+(function () {
+  var toggle = document.querySelector(".menu-toggle"), label = toggle.querySelector("span");
+  document.documentElement.classList.add("js-menu");
+  function set(open) {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    label.textContent = open ? "Close" : "Menu";
+  }
+  toggle.addEventListener("click", function () { set(toggle.getAttribute("aria-expanded") !== "true"); });
+  document.getElementById("nav-links").addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") { set(false); toggle.focus(); }
+  });
+})();
+</script>
 
 <main id="main" class={mainClass}>
 <slot />
