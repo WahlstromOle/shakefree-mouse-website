@@ -1,0 +1,11 @@
+// Cloudflare: publish the finished pages Astro builds into dist/ as a plain static site
+// (no server code). /blog serves blog.html, and so on, so every address stays the same.
+{
+  "name": "shakefreemouse",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}
