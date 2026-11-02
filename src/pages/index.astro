@@ -195,22 +195,37 @@ import { STORE, BUY } from "../links";
         <p class="muted">Imagine reaching for that tiny ✕ and landing on it the first time. No bracing your wrist, no second try, no asking for help. This is what that feels like.</p>
       </div>
       <div class="demo-controls">
-        <button class="switch" id="sf-toggle" type="button" aria-pressed="false">
-          <span class="track" aria-hidden="true"><span class="knob"></span></span>
-          <span id="sf-toggle-label">Turn on smoothing</span>
-        </button>
-        <label class="slider">
-          <span>Tremor strength</span>
-          <input id="sf-strength" type="range" min="0" max="10" step="1" value="5">
-        </label>
+        <div class="demo-switches">
+          <button class="switch" id="sf-toggle" type="button" aria-pressed="false">
+            <span class="track" aria-hidden="true"><span class="knob"></span></span>
+            <span id="sf-toggle-label">Turn on smoothing</span>
+          </button>
+          <button class="switch" id="sf-super" type="button" aria-pressed="false" disabled>
+            <span class="track" aria-hidden="true"><span class="knob"></span></span>
+            <span>Super-smoothing</span>
+          </button>
+        </div>
+        <div class="demo-sliders">
+          <label class="slider">
+            <span>Smoothing strength</span>
+            <input id="sf-level" type="range" min="1" max="10" step="1" value="5" aria-describedby="sf-level-out">
+            <output id="sf-level-out" for="sf-level">5 · Medium</output>
+          </label>
+          <label class="slider">
+            <span>Your tremor</span>
+            <input id="sf-strength" type="range" min="0" max="10" step="1" value="5" aria-describedby="sf-strength-out">
+            <output id="sf-strength-out" for="sf-strength">5 · Medium</output>
+          </label>
+        </div>
       </div>
       <div class="pad" id="sf-pad">
-        <div class="ring" aria-hidden="true"></div>
+        <div class="target" id="sf-target" aria-hidden="true"><span class="x">✕</span> Click me</div>
         <div class="hand" id="sf-hand" aria-hidden="true"></div>
         <div class="dot" id="sf-dot" aria-hidden="true"><svg viewBox="0 0 20 28"><path d="M1.5 1.5v21.5l5.6-5.3 4 8.6 4-1.9-4-8.4h7.8z"/></svg></div>
-        <p class="status" id="sf-status">Move your pointer into the box</p>
+        <p class="score" id="sf-score" aria-live="polite">Hits 0 · Misses 0</p>
+        <p class="status" id="sf-status" aria-live="polite">Move your pointer into the box</p>
       </div>
-      <p class="small demo-note">The dot is a shaky hand, the arrow is your pointer. A simulation in your browser; the app itself works across all of Windows.</p>
+      <p class="small demo-note">The dot is a shaky hand, the arrow is your pointer, smoothed exactly like in the app. Try to click the button with smoothing off, then on. A simulation in your browser; the app itself works across all of Windows.</p>
     </div>
   </section>
 
@@ -316,18 +331,31 @@ import { STORE, BUY } from "../links";
   </section>
 <Fragment slot="end">
 <script is:inline>
+// Live demo: the same smoothing as the app (MouseSmoother/Smoothing.cs): four low-pass stages in a row,
+// stepped 240 times a second with the hand's movement spread evenly between steps; no speed logic.
+// Everything is in real pixels, so it behaves like the cursor on a screen.
 (function () {
   var pad = document.getElementById("sf-pad");
   var dot = document.getElementById("sf-dot");
   var hand = document.getElementById("sf-hand");
+  var target = document.getElementById("sf-target");
   var toggle = document.getElementById("sf-toggle");
   var toggleLabel = document.getElementById("sf-toggle-label");
-  var strength = document.getElementById("sf-strength");
-  var status = document.getElementById("sf-status");
+  var superBtn = document.getElementById("sf-super");
+  var level = document.getElementById("sf-level"), levelOut = document.getElementById("sf-level-out");
+  var tremor = document.getElementById("sf-strength"), tremorOut = document.getElementById("sf-strength-out");
+  var status = document.getElementById("sf-status"), score = document.getElementById("sf-score");
   var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var on = false, hover = false, visible = true, px = 50, py = 50;
-  var base = { x: 50, y: 50 }, cur = { x: 50, y: 50 }, last = 0, trail = [], frame = 0, raf = 0;
+  // The app's tables (MouseSmoother.CutoffByLevel and PrecisionFactorByLevel, Levels.Words)
+  var CUTOFF = [4.0, 3.2, 2.5, 2.0, 1.6, 1.26, 1.0, 0.8, 0.63, 0.5];
+  var SUPER = 0.5; // Super-smoothing strength 5, the app's default
+  var WORDS = ["Minimal", "Very light", "Light", "Gentle", "Medium", "Firm", "Strong", "Very strong", "Heavy", "Maximum"];
+  var STEP = 1 / 240, STAGES = 4;
+
+  var on = false, superOn = false, hover = false, visible = true;
+  var pointer = { x: 0, y: 0 }, prevHand = null, stages = [], backlog = 0, last = 0;
+  var cur = { x: 0, y: 0 }, hits = 0, misses = 0, trail = [], frame = 0, raf = 0;
 
   var dots = [];
   for (var i = 0; i < 12; i++) {
@@ -338,68 +366,129 @@ import { STORE, BUY } from "../links";
     dots.push(d);
   }
 
-  function updateStatus() {
-    status.textContent = hover
-      ? (on ? "Smoothing on: the arrow stays steady while the hand shakes" : "The arrow shakes with the hand. Now turn on smoothing.")
-      : "Move your pointer into the box";
+  function labels() {
+    levelOut.textContent = level.value + " · " + WORDS[level.value - 1];
+    var t = Number(tremor.value);
+    tremorOut.textContent = t === 0 ? "Off" : t + " · " + WORDS[t - 1];
   }
+  function setStatus(text) { status.textContent = text; }
+  function moving() {
+    return on ? "Smoothing is on: the arrow stays steady while the hand shakes" : "The arrow shakes with the hand. Now turn on smoothing.";
+  }
+  function resync() { stages = []; for (var i = 0; i < STAGES; i++) stages.push({ x: cur.x, y: cur.y }); }
 
   toggle.addEventListener("click", function () {
     on = !on;
     toggle.setAttribute("aria-pressed", on ? "true" : "false");
     toggleLabel.textContent = on ? "Smoothing is on" : "Turn on smoothing";
-    updateStatus();
+    superBtn.disabled = !on;
+    if (on) resync(); // like the app: start at the current pointer, so nothing jumps
+    setStatus(moving());
   });
+  superBtn.addEventListener("click", function () {
+    superOn = !superOn;
+    superBtn.setAttribute("aria-pressed", superOn ? "true" : "false");
+    setStatus(superOn ? "Super-smoothing: the arrow slows right down, for small buttons" : "Back to normal smoothing");
+  });
+  level.addEventListener("input", labels);
+  tremor.addEventListener("input", labels);
+  labels();
 
-  pad.addEventListener("pointermove", function (e) {
+  function local(e) {
     var r = pad.getBoundingClientRect();
-    px = (e.clientX - r.left) / r.width * 100;
-    py = (e.clientY - r.top) / r.height * 100;
-    if (!hover) { hover = true; updateStatus(); }
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  pad.addEventListener("pointermove", function (e) {
+    pointer = local(e);
+    if (!hover) { hover = true; setStatus(moving()); }
   });
-  pad.addEventListener("pointerleave", function () { hover = false; updateStatus(); });
+  pad.addEventListener("pointerleave", function () { hover = false; setStatus("Move your pointer into the box"); });
 
-  function clamp(v) { return Math.max(3, Math.min(97, v)); }
+  // A click counts where the arrow's tip is, just like a click with the app
+  function placeTarget() {
+    var w = pad.clientWidth, h = pad.clientHeight, tw = target.offsetWidth, th = target.offsetHeight;
+    target.style.left = Math.round(24 + Math.random() * Math.max(0, w - tw - 48)) + "px";
+    target.style.top = Math.round(60 + Math.random() * Math.max(0, h - th - 120)) + "px"; // clear of the score above and the status below
+  }
+  pad.addEventListener("pointerdown", function (e) {
+    pointer = local(e);
+    hover = true;
+    var r = target.getBoundingClientRect(), p = pad.getBoundingClientRect();
+    var x = cur.x + p.left, y = cur.y + p.top;
+    if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) {
+      hits++;
+      target.classList.add("hit");
+      setTimeout(function () { target.classList.remove("hit"); placeTarget(); }, 350);
+      setStatus("Hit! The click landed on the button.");
+    } else {
+      misses++;
+      setStatus(on ? "Missed. Try a higher smoothing strength, or Super-smoothing." : "Missed. Now try with smoothing on.");
+    }
+    score.textContent = "Hits " + hits + " · Misses " + misses;
+  });
 
   function tick(ts) {
     raf = 0;
     if (!visible) return;
     raf = requestAnimationFrame(tick);
-    var t = ts / 1000, k = Number(strength.value), tx, ty;
-    if (hover) { tx = px; ty = py; }
-    else if (still) { tx = 50; ty = 50; }
-    else { tx = 50 + 32 * Math.sin(t * 0.45); ty = 50 + 26 * Math.sin(t * 0.7 + 0.6); }
-    // The hand always shakes (as much as the slider says); smoothing filters that shake out of the pointer
-    base.x += (tx - base.x) * 0.3;
-    base.y += (ty - base.y) * 0.3;
-    var hx = clamp(base.x + k * 0.45 * (Math.sin(t * 29) * 0.6 + Math.sin(t * 43 + 1.3) * 0.4) + (Math.random() - 0.5) * k * 0.25);
-    var hy = clamp(base.y + k * 0.45 * (Math.sin(t * 33 + 0.7) * 0.6 + Math.sin(t * 51 + 2.1) * 0.4) + (Math.random() - 0.5) * k * 0.25);
-    var dt = last ? Math.min(t - last, 0.1) : 0.016, a = on ? 1 - Math.exp(-dt / 0.12) : 1;
+    var t = ts / 1000, w = pad.clientWidth, h = pad.clientHeight;
+    var dt = last ? Math.min(t - last, 0.1) : 0;
     last = t;
-    cur.x += (hx - cur.x) * a;
-    cur.y += (hy - cur.y) * a;
-    var x = cur.x, y = cur.y;
-    hand.style.left = hx + "%";
-    hand.style.top = hy + "%";
-    dot.style.left = x + "%";
-    dot.style.top = y + "%";
+
+    // Where the hand means to be: your pointer, or a slow tour of the box while you're elsewhere
+    var base = hover ? pointer : (still ? { x: w / 2, y: h / 2 }
+      : { x: w / 2 + w * 0.3 * Math.sin(t * 0.45), y: h / 2 + h * 0.28 * Math.sin(t * 0.7 + 0.6) });
+    // The shake: a tremor of about 5-7 shakes a second, up to 30 px at full strength
+    var amp = Number(tremor.value) * 3;
+    var handNow = {
+      x: base.x + amp * (0.6 * Math.sin(2 * Math.PI * 5.3 * t) + 0.4 * Math.sin(2 * Math.PI * 7.1 * t + 1.3)) + (Math.random() - 0.5) * amp * 0.3,
+      y: base.y + amp * (0.6 * Math.sin(2 * Math.PI * 5.9 * t + 0.7) + 0.4 * Math.sin(2 * Math.PI * 6.6 * t + 2.1)) + (Math.random() - 0.5) * amp * 0.3
+    };
+    if (!prevHand) { prevHand = handNow; cur = { x: handNow.x, y: handNow.y }; resync(); }
+
+    if (on) {
+      // The app's filter: fixed 1/240 s steps, the hand's movement spread evenly over them
+      var cutoff = CUTOFF[level.value - 1] * (superOn ? SUPER : 1);
+      var k = 1 - Math.exp(-2 * Math.PI * cutoff * STEP);
+      backlog += dt;
+      var steps = Math.floor(backlog / STEP);
+      backlog -= steps * STEP;
+      for (var s = 1; s <= steps; s++) {
+        var f = s / steps, v = { x: prevHand.x + (handNow.x - prevHand.x) * f, y: prevHand.y + (handNow.y - prevHand.y) * f };
+        for (var n = 0; n < STAGES; n++) {
+          stages[n].x += k * (v.x - stages[n].x);
+          stages[n].y += k * (v.y - stages[n].y);
+          v = stages[n];
+        }
+      }
+      cur = { x: stages[STAGES - 1].x, y: stages[STAGES - 1].y };
+      if (steps > 0) prevHand = handNow; // otherwise the movement waits for the next step
+    } else {
+      cur = { x: handNow.x, y: handNow.y };
+      prevHand = handNow;
+    }
+
+    var x = Math.max(0, Math.min(w, cur.x)), y = Math.max(0, Math.min(h, cur.y));
+    hand.style.transform = "translate(" + Math.max(0, Math.min(w, handNow.x)) + "px," + Math.max(0, Math.min(h, handNow.y)) + "px)";
+    dot.style.transform = "translate(" + x + "px," + y + "px)";
     if (++frame % 3 === 0) {
       trail.push({ x: x, y: y });
       if (trail.length > dots.length) trail.shift();
       for (var j = 0; j < dots.length; j++) {
         var p = trail[j];
         if (!p) { dots[j].style.opacity = 0; continue; }
-        dots[j].style.left = p.x + "%";
-        dots[j].style.top = p.y + "%";
+        dots[j].style.transform = "translate(" + p.x + "px," + p.y + "px)";
         dots[j].style.opacity = ((j + 1) / trail.length * 0.28).toFixed(2);
       }
     }
   }
 
+  placeTarget();
+  window.addEventListener("resize", placeTarget);
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
       visible = entries[0].isIntersecting;
-      if (visible && !raf) raf = requestAnimationFrame(tick);
+      if (visible && !raf) { last = 0; raf = requestAnimationFrame(tick); }
     }).observe(pad);
   }
   raf = requestAnimationFrame(tick);
