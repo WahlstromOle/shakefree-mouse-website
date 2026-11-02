@@ -1,6 +1,6 @@
 # ShakeFree Mouse website
 
-The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astro](https://astro.build) and hosted free on GitHub Pages. Every change that reaches `main` on GitHub is built and published automatically within a couple of minutes (`.github/workflows/deploy.yml`).
+The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astro](https://astro.build) and hosted free on Cloudflare (a Worker called `shakefreemouse` in the Cloudflare dashboard, set up by `wrangler.jsonc`). Every change that reaches `main` on GitHub is built and published by Cloudflare within a couple of minutes; see each build under the project's **Deployments** in Cloudflare.
 
 ## Where things are
 
@@ -23,7 +23,8 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astr
 | `public/anim.js` | | Calm entrance animations on the home page (off when Windows animations are off) |
 | `public/images/` | | Photos; `share.jpg` is the picture shown when the site is shared |
 | `public/icon.svg`, `public/fonts/` | | The logo and the Figtree font, hosted here so no outside files are loaded |
-| `public/robots.txt`, `public/CNAME` | | Keeps `/activate` out of search results; tells GitHub Pages to use shakefreemouse.com |
+| `public/robots.txt` | | Keeps `/activate` out of search results |
+| `wrangler.jsonc` | | Tells Cloudflare to publish the finished pages from `dist/` (no server code) |
 
 ## Adding an article
 
@@ -45,7 +46,6 @@ The Blog page, its topic shelf and topic page, Related guides, the sitemap and t
 - **Prices** (Monthly $5, Yearly $42, Lifetime $65, tax included) appear on the home page (plan cards and the hidden product data for Google) and in the terms. If they change, update both.
 - **Activation page must stay private**: it must never get analytics, outside fonts or other outside files, because the licence key is in its address. This is also why the font is hosted on the site.
 
-## Domain settings (at GoDaddy)
+## Domain settings
 
-- Four **A** records for `@` (the bare domain): `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-- One **CNAME** record for `www`: `wahlstromole.github.io`
+shakefreemouse.com is registered at GoDaddy (renew it there), but its settings (DNS) are managed by Cloudflare: GoDaddy points to Cloudflare's nameservers. In Cloudflare, under the domain's **DNS → Records**, keep the `google-site-verification` TXT record (Google Search Console) and the `_dmarc` record. The site itself is connected under the Worker's **Domains** tab (shakefreemouse.com and www). Keep Cloudflare's **Web Analytics** and **Bot Fight Mode** switched off: they would add scripts or cookies to every page, including the activation page.

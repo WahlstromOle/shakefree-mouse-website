@@ -6,6 +6,7 @@ keyword: mouse hand tremor
 topic: computer-setup
 featured: true
 date: 2026-10-25
+updated: 2026-11-02
 readTime: 6
 image: images/hand-on-mouse.webp
 imageWidth: 1448
@@ -81,7 +82,8 @@ The settings above make shaking matter less, but the pointer still shakes. Softw
 
 That’s what we built [ShakeFree Mouse](index.html) for. It’s a small Windows app that runs in the background and works with the mouse or trackpad you already have:
 
-- **Smoothing** removes small tremors while quick, deliberate moves still feel fast. Two sliders set how much.
+- **Smoothing** filters out the shake. One slider sets how much: the higher the strength, the steadier and slower the pointer.
+- **Super-smoothing** slows the pointer right down at the press of a key, for small buttons and links.
 - **Hold to click** keeps the pointer still while you press, so the click lands where you aimed.
 - **Ignore quick second clicks** stops an accidental double-click from opening things by mistake.
 
