@@ -19,7 +19,7 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astr
 | `src/pages/sitemap.xml.ts` | `/sitemap.xml` | The page list for search engines; articles are added by themselves |
 | `src/layouts/Base.astro` | | The top menu, footer and `<head>` shared by every page: change them here only |
 | `src/links.ts` | | The Microsoft Store and Lemon Squeezy checkout links used by every button |
-| `public/style.css` | | Shared look: blue on white, light mode only, with a warm marigold accent (`--warm`) that stands for the shake and the problem, never for buttons or text |
+| `public/style.css` | | Shared look (the app's blue on white, light mode only) |
 | `public/anim.js` | | Calm entrance animations on the home page (off when Windows animations are off) |
 | `public/images/` | | Photos; `share.jpg` is the picture shown when the site is shared |
 | `public/icon.svg`, `public/fonts/` | | The logo and the Figtree font, hosted here so no outside files are loaded |
