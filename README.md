@@ -42,7 +42,7 @@ The Blog page, its topic shelf and topic page, Related guides, the sitemap and t
 
 ## Things to change later
 
-- **Microsoft Store link**: change it in `src/links.ts` once the Store listing exists; every button on the site follows. The **Lemon Squeezy checkout link** there is already the live one (Yearly preselected).
+- **Microsoft Store link** and **Lemon Squeezy checkout link** (Yearly preselected) are both live, in `src/links.ts`; every button on the site follows.
 - **Prices** (Monthly $5, Yearly $42, Lifetime $65, tax included) appear on the home page (plan cards and the hidden product data for Google) and in the terms. If they change, update both.
 - **Activation page must stay private**: it must never get analytics, outside fonts or other outside files, because the licence key is in its address. This is also why the font is hosted on the site.
 
