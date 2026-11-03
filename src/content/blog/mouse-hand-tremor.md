@@ -80,7 +80,7 @@ Windows 11 also has **Voice access** (Settings > Accessibility > **Speech**), wh
 
 The settings above make shaking matter less, but the pointer still shakes. Software can go a step further and filter out the tremor before it reaches the pointer, while your deliberate movements still come through.
 
-That’s what we built [ShakeFree Mouse](index.html) for. It’s a small Windows app that runs in the background and works with the mouse or trackpad you already have:
+That’s what we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77) for. It’s a small Windows app that runs in the background and works with the mouse or trackpad you already have:
 
 - **Smoothing** filters out the shake. One slider sets how much: the higher the strength, the steadier and slower the pointer.
 - **Super-smoothing** slows the pointer right down at the press of a key, for small buttons and links.
