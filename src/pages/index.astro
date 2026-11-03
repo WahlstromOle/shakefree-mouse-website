@@ -1,6 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { STORE, BUY } from "../links";
+import { STORE, BUY, BUY_MONTHLY, BUY_YEARLY, BUY_LIFETIME } from "../links";
 ---
 <Base title="ShakeFree Mouse – steady cursor for shaky hands" description="ShakeFree Mouse is a small Windows app that smooths hand tremor before it reaches the mouse pointer. Download it from Microsoft Store and try it free for 5 days." path="/" current="home">
 <Fragment slot="head-meta">
@@ -281,7 +281,7 @@ import { STORE, BUY } from "../links";
           <div class="per">per month</div>
           <p class="best">Best if you want to keep it flexible.</p>
           <p class="billing">Renews monthly. Cancel any time.</p>
-          <a class="button secondary" href={BUY} aria-label="Buy the Monthly plan">Choose Monthly</a>
+          <a class="button secondary" href={BUY_MONTHLY} aria-label="Buy the Monthly plan">Choose Monthly</a>
         </div>
         <div class="plan featured">
           <div class="plan-top"><h3>Yearly</h3><span class="badge">Save 30%</span></div>
@@ -289,7 +289,7 @@ import { STORE, BUY } from "../links";
           <div class="per">per year · $3.50 a month</div>
           <p class="best">Best value for regular use.</p>
           <p class="billing">One payment a year. Cancel any time.</p>
-          <a class="button" href={BUY} aria-label="Buy the Yearly plan">Choose Yearly</a>
+          <a class="button" href={BUY_YEARLY} aria-label="Buy the Yearly plan">Choose Yearly</a>
         </div>
         <div class="plan">
           <h3>Lifetime</h3>
@@ -297,7 +297,7 @@ import { STORE, BUY } from "../links";
           <div class="per">pay once</div>
           <p class="best">Best if you’ll use it for years.</p>
           <p class="billing">No renewals, ever.</p>
-          <a class="button secondary" href={BUY} aria-label="Buy the Lifetime plan">Choose Lifetime</a>
+          <a class="button secondary" href={BUY_LIFETIME} aria-label="Buy the Lifetime plan">Choose Lifetime</a>
         </div>
       </div>
       <h3 class="includes-title">Every plan includes</h3>
