@@ -3,10 +3,15 @@ import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { topicIds } from "./topics";
 
-// Blog articles: one Markdown file each in src/content/blog. The file name becomes the address,
-// e.g. mouse-hand-tremor.md → shakefreemouse.com/mouse-hand-tremor
+// Blog articles: one Markdown file each in src/content/blog, named with the publish date first so
+// they sort by date. The file name without the date becomes the address,
+// e.g. 2026-10-25-mouse-hand-tremor.md → shakefreemouse.com/mouse-hand-tremor
 const blog = defineCollection({
-  loader: glob({ pattern: "*.md", base: "./src/content/blog" }),
+  loader: glob({
+    pattern: "*.md",
+    base: "./src/content/blog",
+    generateId: ({ entry }) => entry.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\.md$/, ""),
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),   // for Google's result snippet
