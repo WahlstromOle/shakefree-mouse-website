@@ -22,7 +22,7 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astr
 | `public/style.css` | | Shared look (the app's blue on white, light mode only) |
 | `public/anim.js` | | Calm entrance animations on the home page (off when Windows animations are off) |
 | `public/images/` | | Photos; `share.jpg` is the picture shown when the site is shared |
-| `public/icon.svg`, `public/fonts/` | | The logo and the Figtree font, hosted here so no outside files are loaded |
+| `public/icon.svg`, `public/fonts/` | | The logo (white pointer between shake waves on blue) and the Figtree font, hosted here so no outside files are loaded |
 | `public/robots.txt` | | Keeps `/activate` out of search results |
 | `wrangler.jsonc` | | Tells Cloudflare to publish the finished pages from `dist/` (no server code) |
 
