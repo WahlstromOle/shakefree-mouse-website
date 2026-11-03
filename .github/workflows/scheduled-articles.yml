@@ -1,0 +1,31 @@
+# Publishes articles on their date. The site is built by Cloudflare whenever something changes on main,
+# so every morning at 06:00 UTC (07:00 Swedish winter time, 08:00 summer time) this checks whether an
+# article is dated today and, if so, updates scheduled-publish.txt, which makes Cloudflare rebuild the site.
+name: Publish scheduled articles
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch: # also lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild the site if an article is dated today
+        run: |
+          today=$(TZ=Europe/Stockholm date +%F)
+          if grep -lE "^date: *['\"]?$today" src/content/blog/*.md; then
+            date -u +%FT%TZ > .github/scheduled-publish.txt
+            git config user.name "github-actions[bot]"
+            git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+            git add .github/scheduled-publish.txt
+            git commit -m "Publish articles dated $today"
+            git push
+          else
+            echo "No article is dated $today, nothing to publish."
+          fi
