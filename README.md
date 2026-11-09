@@ -30,7 +30,7 @@ The website for ShakeFree Mouse, at https://shakefreemouse.com. Built with [Astr
 
 1. Add a Markdown file to `src/content/blog/`, starting with its publish date, e.g. `2026-12-01-essential-tremor-computer.md`. The name without the date becomes the address: `shakefreemouse.com/essential-tremor-computer`. Keep the date in the name the same as the `date` inside the file.
 2. Start it with the details between `---` lines, copied from `2026-10-25-mouse-hand-tremor.md` (title, description, summary, keyword, topic, date, readTime, image and its size and description, lead). `topic` is one of `computer-setup`, `tools-and-devices`, `about-tremor`, `everyday-life`. `featured: true` puts it in "Start here" (keep that to about 3). `draft: true` keeps it unpublished. Put a title containing a colon in quotes.
-3. Write the text in Markdown: `## Heading`, `- list item`, `**bold**`, `[link text](page.html)`.
+3. Write the text in Markdown: `## Heading`, `- list item`, `**bold**`, `[link text](/page-address)`.
 4. Put its photo in `public/images/`.
 
 The Blog page, its topic shelf and topic page, Related guides, the sitemap and the article's page are all made from that file. Don't put prices in articles; link to the home page's pricing instead.

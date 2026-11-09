@@ -87,7 +87,7 @@ That’s what we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1
 - **Hold to click** keeps the pointer still while you press, so the click lands where you aimed.
 - **Ignore quick second clicks** stops an accidental double-click from opening things by mistake.
 
-You can [try the live demo](index.html#demo) right in your browser, and the app is free to try for 5 days.
+You can [try the live demo](/#demo) right in your browser, and the app is free to try for 5 days.
 
 ## A note on your health
 
