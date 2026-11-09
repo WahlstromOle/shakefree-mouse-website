@@ -311,9 +311,17 @@ html.anim .hero h1.in .w > span { transform: none; }
 .shelf-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.5rem 1.5rem; }
 .see-all { display: inline-flex; align-items: center; min-height: 3rem; font-weight: 600; }
 .shelf > .muted { margin: 0.25rem 0 1rem; }
-/* Article cards (PostList): one column on phones, two across (compact: up to three) on wider screens */
+/* Article cards (PostList): photo on top on phones. On wider screens each card is a row with the photo
+   on the left; compact cards stay photo-on-top, two across (three on wide screens). */
 .post-cards { list-style: none; margin: 1.25rem 0 2rem; padding: 0; display: grid; gap: 1.25rem; }
-@media (min-width: 40rem) { .post-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 40rem) {
+  .post-cards.compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .post-cards:not(.compact) a { display: grid; grid-template-columns: min(15rem, 35%) minmax(0, 1fr); grid-template-rows: auto auto 1fr; column-gap: 1.5rem; padding: 0; }
+  .post-cards:not(.compact) img { grid-row: 1 / 4; height: 100%; aspect-ratio: 4 / 3; margin: 0; }
+  .post-cards:not(.compact) strong { padding: 1.25rem 1.25rem 0 0; }
+  .post-cards:not(.compact) a > span { padding: 0 1.25rem 0 0; }
+  .post-cards:not(.compact) small { padding: 0.25rem 1.25rem 1.25rem 0; align-self: end; }
+}
 @media (min-width: 56rem) { .post-cards.compact { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .post-cards li { margin: 0; }
 .post-cards a { display: flex; flex-direction: column; gap: 0.4rem; height: 100%; padding: 0 0 1.25rem; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--surface); overflow: hidden; color: var(--text); text-decoration: none; }
