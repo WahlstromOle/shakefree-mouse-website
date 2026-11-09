@@ -5,7 +5,6 @@ import Base from "../layouts/Base.astro";
 import PostList from "../components/PostList.astro";
 import { TOPICS } from "../topics";
 import { publishedPosts } from "../posts";
-import { longDate } from "../dates";
 
 const SHELF = 4; // guides shown per topic before "See all"
 const posts = await publishedPosts();
@@ -22,17 +21,7 @@ const shelves = TOPICS.map((t) => ({ ...t, posts: posts.filter((p) => p.data.top
   {featured.length > 0 && (
     <section class="start-here" aria-labelledby="start-title">
       <h2 id="start-title">Start here</h2>
-      <ul class="feature-cards">
-        {featured.map((post) => (
-          <li>
-            <a href={`/${post.id}`}>
-              <img src={`/${post.data.image}`} width={post.data.imageWidth} height={post.data.imageHeight} alt="" loading="lazy">
-              <strong>{post.data.title}</strong>
-              <small>{longDate(post.data.date)} · {post.data.readTime} minute read</small>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <PostList posts={featured} compact />
     </section>
   )}
 

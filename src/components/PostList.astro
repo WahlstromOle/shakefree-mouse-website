@@ -1,18 +1,20 @@
 ---
-// A compact list of articles: each whole row is one large link
+// Articles as photo cards: each whole card is one large link.
+// compact: smaller cards (photo, title, date) up to three across, for "Start here" and Related guides.
 import type { CollectionEntry } from "astro:content";
 import { longDate } from "../dates";
 
-interface Props { posts: CollectionEntry<"blog">[] }
-const { posts } = Astro.props;
+interface Props { posts: CollectionEntry<"blog">[]; compact?: boolean }
+const { posts, compact = false } = Astro.props;
 ---
-<ul class="post-list">
+<ul class:list={["post-cards", { compact }]}>
   {posts.map((post) => (
     <li>
       <a href={`/${post.id}`}>
+        <img src={`/${post.data.image}`} width={post.data.imageWidth} height={post.data.imageHeight} alt="" loading="lazy">
         <strong>{post.data.title}</strong>
-        <span>{post.data.summary}</span>
-        <small>{longDate(post.data.date)} · {post.data.readTime} minute read</small>
+        {!compact && <span>{post.data.summary}</span>}
+        <small><span>{longDate(post.data.date)}</span> · <span>{post.data.readTime} minute read</span></small>
       </a>
     </li>
   ))}
