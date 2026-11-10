@@ -11,7 +11,7 @@ An article dated in the future stays hidden until its date. Status: Planned → 
 | Sat 7 Nov 2026 | ClickLock: drag and select without holding the button | clicklock windows 11 | Published | 2026-11-07-clicklock-windows-11.md |
 | Sun 8 Nov 2026 | How to make the mouse pointer bigger and easier to follow | make mouse pointer bigger windows 11 | Published | 2026-11-08-bigger-mouse-pointer.md |
 | Mon 9 Nov 2026 | Mouse Keys: move the pointer with the keyboard | mouse keys windows 11 | Published | 2026-11-09-mouse-keys-windows-11.md |
-| Tue 10 Nov 2026 | Touchpad settings for shaky hands | touchpad sensitivity windows 11 | Drafted | 2026-11-10-touchpad-settings-tremor.md |
+| Tue 10 Nov 2026 | Touchpad settings for shaky hands | touchpad sensitivity windows 11 | Published | 2026-11-10-touchpad-settings-tremor.md |
 | Wed 11 Nov 2026 | Mouse smoothing software for tremors: what it can and can't do | mouse stabilizer software tremor | Drafted | 2026-11-11-mouse-stabilizer-software.md |
 | Thu 12 Nov 2026 | Filter Keys: stop repeated and accidental key presses | filter keys windows 11 | Drafted | 2026-11-12-filter-keys-windows-11.md |
 | Fri 13 Nov 2026 | Sticky Keys: press shortcuts one key at a time | sticky keys windows 11 | Drafted | 2026-11-13-sticky-keys-windows-11.md |
@@ -20,3 +20,10 @@ An article dated in the future stays hidden until its date. Status: Planned → 
 | Mon 16 Nov 2026 | Text suggestions in Windows: type less with word prediction | text suggestions windows 11 | Drafted | 2026-11-16-text-suggestions-windows-11.md |
 | Tue 17 Nov 2026 | Windows keyboard shortcuts that save you mouse work | windows keyboard shortcuts | Drafted | 2026-11-17-windows-keyboard-shortcuts.md |
 | Wed 18 Nov 2026 | Keyboards for hand tremors: what to look for | keyboard for hand tremors | Drafted | 2026-11-18-keyboard-for-hand-tremors.md |
+| Thu 19 Nov 2026 | Assistive technology for hand tremors: an overview (hub) | assistive technology for tremors | Drafted | 2026-11-19-assistive-technology-for-tremors.md |
+| Fri 20 Nov 2026 | Trackball vs mouse for a hand tremor | trackball for tremors | Drafted | 2026-11-20-trackball-for-tremors.md |
+| Sat 21 Nov 2026 | Does a vertical mouse help with a tremor? | vertical mouse tremor | Drafted | 2026-11-21-vertical-mouse-tremor.md |
+| Sun 22 Nov 2026 | Weighted mice: can extra weight steady your hand? | weighted mouse for tremors | Drafted | 2026-11-22-weighted-mouse-for-tremors.md |
+| Mon 23 Nov 2026 | Keyguards: what they are and who they help | keyguard keyboard | Drafted | 2026-11-23-keyguard-keyboard.md |
+| Tue 24 Nov 2026 | Forearm and wrist supports for computer use | forearm support for computer | Drafted | 2026-11-24-forearm-support-for-computer.md |
+| Wed 25 Nov 2026 | Joysticks, rollers and other alternatives to a mouse | alternative mouse for disabilities | Drafted | 2026-11-25-mouse-alternatives.md |
