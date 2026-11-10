@@ -13,10 +13,12 @@ export async function getStaticPaths() {
 
 const { t, posts } = Astro.props;
 ---
-<Base title={`${t.name} – ShakeFree Mouse guides`} description={t.intro} path={`/topics/${t.id}`} current="blog" mainClass="wrap narrow prose">
-  <p class="small topic-crumb"><a href="/blog">Blog</a> › {t.name}</p>
-  <h1>{t.name}</h1>
-  <p class="lead">{t.intro}</p>
+<Base title={`${t.name} – ShakeFree Mouse guides`} description={t.intro} path={`/topics/${t.id}`} current="blog" mainClass="wrap blog">
+  <div class="narrow prose blog-head">
+    <p class="small topic-crumb"><a href="/blog">Blog</a> › {t.name}</p>
+    <h1>{t.name}</h1>
+    <p class="lead">{t.intro}</p>
+  </div>
   <PostList posts={posts} />
   <p><a href="/blog">← All topics</a></p>
 </Base>
