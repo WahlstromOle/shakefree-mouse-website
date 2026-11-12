@@ -67,7 +67,7 @@ The type of mouse can matter too. Many people with tremor find that a mouse with
 
 ## 5. Filter out the second click with software
 
-Windows has a setting that ignores repeated key presses on the keyboard ([Filter keys](/windows-11-accessibility-tremor)), but nothing similar for mouse buttons. That gap is one of the reasons we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77). Its **Ignore quick second clicks** feature drops a second click that comes too soon after the first, so a shaky press counts as one click. **Hold to click** also keeps the pointer still while you press, so the click lands where you aimed. It's free to try for 5 days; plans are on our [home page](/#pricing). To learn how this kind of software works, see our guide to [mouse smoothing software](/mouse-stabilizer-software).
+Windows has a setting that ignores repeated key presses on the keyboard ([Filter keys](/filter-keys-windows-11)), but nothing similar for mouse buttons. That gap is one of the reasons we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77). Its **Ignore quick second clicks** feature drops a second click that comes too soon after the first, so a shaky press counts as one click. **Hold to click** also keeps the pointer still while you press, so the click lands where you aimed. It's free to try for 5 days; plans are on our [home page](/#pricing). To learn how this kind of software works, see our guide to [mouse smoothing software](/mouse-stabilizer-software).
 
 ## Frequently asked questions
 
