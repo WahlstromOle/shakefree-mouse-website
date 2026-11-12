@@ -61,7 +61,7 @@ A bar appears at the top of the screen. A few commands to start with:
 
 - **"Click"** and the name of a button, for example "click File".
 - **"Show numbers"** puts a number on everything you can click. Say the number to click it. This is a big help on pages full of small links.
-- **"Show grid"** divides the screen into numbered squares. Say a number to zoom in, again and again, until the pointer is exactly where you want it.
+- **"Show grid"** divides the screen into numbered squares. Say a number to zoom in, again and again, until the pointer is exactly where you want it. It works well together with [Mouse keys](/mouse-keys-windows-11) for the last small nudge.
 
 Voice access has an interactive guide that teaches the basics. Microsoft lists the supported languages on its help pages; at the time of writing they include English, French, German and Spanish.
 

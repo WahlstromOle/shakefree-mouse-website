@@ -6,7 +6,7 @@ keyword: mouse hand tremor
 topic: computer-setup
 featured: true
 date: 2026-10-25
-updated: 2026-11-02
+updated: 2026-11-12
 readTime: 6
 image: images/hand-on-mouse.webp
 imageWidth: 1448
@@ -36,16 +36,16 @@ A bigger pointer is easier to follow, and bigger buttons are easier to hit.
 - **Larger text:** Settings > Accessibility > **Text size**.
 - **Larger everything:** Settings > **System** > **Display** > **Scale**. Raising it makes buttons, icons and menus bigger targets.
 
-In your web browser, you can also press **Ctrl and +** to zoom in on a page, and **Ctrl and 0** to go back to normal.
+In your web browser, you can also press **Ctrl and +** to zoom in on a page, and **Ctrl and 0** to go back to normal. Our guide to [making the mouse pointer bigger](/bigger-mouse-pointer) walks through each of these step by step.
 
 ## 3. Make double-clicking and dragging easier
 
 Double-clicks and drags are where a tremor gets in the way most. In **Additional mouse settings**, on the **Buttons** tab:
 
 - **Double-click speed:** move it towards **Slow**, so you have more time for the second click.
-- **ClickLock:** when it’s on, you hold the button down briefly to “lock” it, move the mouse to drag, and click again to let go. You don’t have to keep the button pressed while you move.
+- **ClickLock:** when it’s on, you hold the button down briefly to “lock” it, move the mouse to drag, and click again to let go. You don’t have to keep the button pressed while you move. Our [ClickLock guide](/clicklock-windows-11) shows how to set it up.
 
-You can also avoid double-clicking altogether: click a file once to select it, then press **Enter** to open it.
+You can also avoid double-clicking altogether: click a file once to select it, then press **Enter** to open it. If things keep opening by mistake, see [how to stop accidental double-clicks in Windows](/accidental-double-click).
 
 ## 4. Steady your arm, not just your hand
 
@@ -66,6 +66,8 @@ The mouse itself matters. Things people with tremor often find helpful:
 
 If you can, try one before you buy, or buy from a shop with an easy return policy. What works is very personal.
 
+On a laptop? Our guide to [touchpad settings for shaky hands](/touchpad-settings-tremor) covers the touchpad too.
+
 ## 6. Use the keyboard and your voice for some tasks
 
 Every click you don’t need is one less chance to miss. A few keyboard shortcuts replace a lot of fiddly clicking:
@@ -74,11 +76,11 @@ Every click you don’t need is one less chance to miss. A few keyboard shortcut
 - **Alt and F4** closes the window you’re in.
 - **Ctrl and C** copies, **Ctrl and V** pastes, **Ctrl and Z** undoes.
 
-Windows 11 also has **Voice access** (Settings > Accessibility > **Speech**), which lets you open apps, click buttons and type by speaking. And **Mouse keys** (Settings > Accessibility > **Mouse**) lets you move the pointer with the number keys, one small step at a time.
+Windows 11 also has **Voice access** (Settings > Accessibility > **Speech**), which lets you open apps, click buttons and type by speaking. And **Mouse keys** (Settings > Accessibility > **Mouse**) lets you move the pointer with the number keys, one small step at a time. Our [Mouse keys guide](/mouse-keys-windows-11) explains how to set it up.
 
 ## 7. Smooth out the shake with software
 
-The settings above make shaking matter less, but the pointer still shakes. Software can go a step further and filter out the tremor before it reaches the pointer, while your deliberate movements still come through.
+The settings above make shaking matter less, but the pointer still shakes. Software can go a step further and filter out the tremor before it reaches the pointer, while your deliberate movements still come through. Our guide to [mouse smoothing software](/mouse-stabilizer-software) explains what it can and can’t do.
 
 That’s what we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77) for. It’s a small Windows app that runs in the background and works with the mouse or trackpad you already have:
 
@@ -88,6 +90,8 @@ That’s what we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1
 - **Ignore quick second clicks** stops an accidental double-click from opening things by mistake.
 
 You can [try the live demo](/#demo) right in your browser, and the app is free to try for 5 days.
+
+For more of the settings built into Windows, see [Windows 11 accessibility settings for hand tremors](/windows-11-accessibility-tremor).
 
 ## A note on your health
 
