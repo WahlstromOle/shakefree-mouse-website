@@ -40,7 +40,7 @@ Clicking a small word on screen is hard with a shaky hand, so the keyboard is us
 2. Press the **left** or **right arrow** to move to the word you want.
 3. Press **Enter** to insert it.
 
-To get rid of the suggestions without choosing one, press **Esc**.
+To get rid of the suggestions without choosing one, press **Esc**. Our [guide to keyboard shortcuts](/windows-keyboard-shortcuts) has more keyboard-only tricks.
 
 <!-- SCREENSHOT: a document with the text suggestions bar above the cursor and one suggestion highlighted -->
 

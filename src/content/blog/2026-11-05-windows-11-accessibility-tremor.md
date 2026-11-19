@@ -37,7 +37,7 @@ Each option has a drop-down where you set the waiting time. Start with a short t
 
 <!-- SCREENSHOT: the Filter keys options expanded, showing the three switches and their drop-downs -->
 
-One thing to know: on many PCs, holding the right **Shift** key for about eight seconds turns Filter keys on or off. If your typing suddenly seems to ignore you, that shortcut may be why. You can switch the shortcut off on the same page.
+One thing to know: on many PCs, holding the right **Shift** key for about eight seconds turns Filter keys on or off. If your typing suddenly seems to ignore you, that shortcut may be why. You can switch the shortcut off on the same page. Our [Filter Keys guide](/filter-keys-windows-11) explains each option in more detail.
 
 ## Sticky keys: shortcuts one key at a time
 
@@ -47,7 +47,7 @@ Shortcuts such as **Ctrl and C** (copy) save a lot of clicking, but pressing two
 2. Under **Interaction**, select **Keyboard**.
 3. Turn on **Sticky keys**.
 
-Pressing **Shift** five times in a row also turns Sticky keys on. If a box pops up asking about Sticky keys when you didn't mean it, that's why; you can switch off that shortcut in the Sticky keys options.
+Pressing **Shift** five times in a row also turns Sticky keys on. If a box pops up asking about Sticky keys when you didn't mean it, that's why; you can switch off that shortcut in the Sticky keys options. Our [Sticky Keys guide](/sticky-keys-windows-11) explains each option.
 
 ## Voice access: click and type by speaking
 
@@ -63,7 +63,7 @@ A bar appears at the top of the screen. A few commands to start with:
 - **"Show numbers"** puts a number on everything you can click. Say the number to click it. This is a big help on pages full of small links.
 - **"Show grid"** divides the screen into numbered squares. Say a number to zoom in, again and again, until the pointer is exactly where you want it. It works well together with [Mouse keys](/mouse-keys-windows-11) for the last small nudge.
 
-Voice access has an interactive guide that teaches the basics. Microsoft lists the supported languages on its help pages; at the time of writing they include English, French, German and Spanish.
+Voice access has an interactive guide that teaches the basics. Microsoft lists the supported languages on its help pages; at the time of writing they include English, French, German and Spanish. If you only want to dictate text, our guide to [voice typing](/voice-typing-windows-11) is a simpler place to start.
 
 <!-- SCREENSHOT: voice access bar at the top of the screen with "Show numbers" overlay on a normal window -->
 
@@ -87,7 +87,7 @@ You don't need to change everything at once. A good order to try:
 2. **Sticky keys**, if keyboard shortcuts are awkward.
 3. **Voice access**, for the clicks that are hardest to aim.
 
-Give each change a day or two before deciding whether it helps. What works is very personal, and it's fine to switch something back off.
+Give each change a day or two before deciding whether it helps. What works is very personal, and it's fine to switch something back off. If settings alone aren't enough, our guide to [assistive technology for tremors](/assistive-technology-for-tremors) shows what else is out there.
 
 ## Frequently asked questions
 

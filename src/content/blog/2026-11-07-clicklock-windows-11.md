@@ -83,7 +83,7 @@ ClickLock makes dragging easier, but many drags can be replaced with keys:
 - **Selecting text:** click at the start, then hold **Shift** and press the arrow keys. **Shift and End** selects to the end of the line.
 - **Moving a window:** press the **Windows key** with the left or right arrow to snap it to one side of the screen.
 
-If pressing two keys at once is hard, [Sticky keys](/windows-11-accessibility-tremor) lets you press them one after the other.
+If pressing two keys at once is hard, [Sticky keys](/windows-11-accessibility-tremor) lets you press them one after the other. Our [guide to keyboard shortcuts](/windows-keyboard-shortcuts) lists more.
 
 ## Frequently asked questions
 

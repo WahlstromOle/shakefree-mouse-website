@@ -17,7 +17,7 @@ The Windows keyboard shortcuts that save the most mouse work are **Ctrl and C / 
 
 ## First: make shortcuts easier to press
 
-Most shortcuts need two keys held together. If that's hard, turn on [Sticky Keys](/sticky-keys-windows-11) so you can press them one at a time: **Ctrl**, then **C**. If keys get typed twice, [Filter Keys](/filter-keys-windows-11) helps too.
+Most shortcuts need two keys held together. If that's hard, turn on [Sticky Keys](/sticky-keys-windows-11) so you can press them one at a time: **Ctrl**, then **C**. If keys get typed twice, [Filter Keys](/filter-keys-windows-11) helps too. If the keyboard itself is the problem, see our guide to [keyboards for hand tremors](/keyboard-for-hand-tremors).
 
 In this guide, "Ctrl and C" means press Ctrl and C together, or one after the other with Sticky Keys on.
 
@@ -71,7 +71,7 @@ Selecting text with the mouse means aiming at the exact start and end of a word.
 | **Ctrl and Backspace** | Delete the whole word before the cursor |
 | **Ctrl and F** | Find a word on the page or in the document |
 
-A good routine: click roughly near the text, then use the arrow keys to get exactly where you want.
+A good routine: click roughly near the text, then use the arrow keys to get exactly where you want. For more on editing and typing, see [typing with a hand tremor](/typing-with-hand-tremor).
 
 ## Helpful extras
 
@@ -92,7 +92,7 @@ In your web browser, **Alt and left arrow** goes back a page. **Tab** moves betw
 
 ## For the mouse work that's left
 
-Shortcuts cut down the clicks, but some things still need the mouse. Windows has settings that help, collected in our [guide to using a mouse with a hand tremor](/mouse-hand-tremor). For a steadier pointer, we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77), a small Windows app that smooths out shaking and filters accidental clicks; our guide to [mouse smoothing software](/mouse-stabilizer-software) explains what this kind of software can and can't do.
+Shortcuts cut down the clicks, but some things still need the mouse. Windows has settings that help, collected in our [guide to using a mouse with a hand tremor](/mouse-hand-tremor). For other equipment that can help, see [assistive technology for tremors](/assistive-technology-for-tremors). For a steadier pointer, we built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77), a small Windows app that smooths out shaking and filters accidental clicks; our guide to [mouse smoothing software](/mouse-stabilizer-software) explains what this kind of software can and can't do.
 
 ## Frequently asked questions
 

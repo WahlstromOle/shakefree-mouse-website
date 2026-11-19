@@ -88,7 +88,7 @@ Hold **Shift** while pressing a direction key (if you turned that option on) for
 
 - Turn up **Mouse keys speed** a little, or hold **Ctrl** for long moves.
 - Combine it with **voice access**: saying "show grid" lets you jump close to a spot by voice, then Mouse keys finishes the job. Our guide to [Windows 11 accessibility settings for hand tremors](/windows-11-accessibility-tremor) explains voice access.
-- Use the keyboard to skip the pointer altogether where you can: **Tab** moves between buttons and **Enter** presses them.
+- Use the keyboard to skip the pointer altogether where you can: **Tab** moves between buttons and **Enter** presses them. Our [guide to keyboard shortcuts](/windows-keyboard-shortcuts) has more.
 
 ## Frequently asked questions
 

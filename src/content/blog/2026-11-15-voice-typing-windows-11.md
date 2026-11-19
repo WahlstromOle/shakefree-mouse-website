@@ -73,7 +73,7 @@ If writing is your main difficulty, start with voice typing. If clicking and mov
 - **Speak in whole sentences** rather than word by word. It gives the speech recognition more context.
 - **Keep background noise down** where you can: radio, TV and open windows.
 - **Check before you send.** Voice typing can mishear names and unusual words. Read the text back, and fix small errors with the keyboard.
-- **Mix voice and keys.** Many people dictate the bulk of a message and use the keyboard for small fixes. Our tips for [typing with a hand tremor](/typing-with-hand-tremor) cover the keyboard side.
+- **Mix voice and keys.** Many people dictate the bulk of a message and use the keyboard for small fixes. Our tips for [typing with a hand tremor](/typing-with-hand-tremor) cover the keyboard side. [Text suggestions](/text-suggestions-windows-11) can save key presses there too.
 
 AbilityNet, a UK charity, suggests voice recognition for people with tremors whose voice is clear. It takes a little patience to get used to, but it can replace a lot of typing.
 

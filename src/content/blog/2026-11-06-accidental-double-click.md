@@ -57,13 +57,13 @@ Even with the best settings, a stray click will sometimes get through. A few key
 - **Alt and F4** closes the window that just opened by mistake.
 - **Esc** closes most menus and dialog boxes without doing anything.
 
-If you use [Sticky keys](/windows-11-accessibility-tremor), you can press these one key at a time.
+If you use [Sticky keys](/windows-11-accessibility-tremor), you can press these one key at a time. Our [guide to keyboard shortcuts](/windows-keyboard-shortcuts) lists more of them.
 
 ## 4. Check that it's not the mouse
 
 Mouse buttons wear out. A worn button can register two clicks from a single careful press, even for someone with a perfectly steady hand. If you get double-clicks when you press slowly and carefully, try a different mouse. If the problem disappears, it was the hardware.
 
-The type of mouse can matter too. Many people with tremor find that a mouse with firmer buttons, or a trackball where the hand can rest while clicking, gives fewer accidental presses. What suits you is personal, so try one before you buy if you can.
+The type of mouse can matter too. Many people with tremor find that a mouse with firmer buttons, or a trackball where the hand can rest while clicking, gives fewer accidental presses. What suits you is personal, so try one before you buy if you can. Our guide to [assistive technology for tremors](/assistive-technology-for-tremors) lists the options.
 
 ## 5. Filter out the second click with software
 

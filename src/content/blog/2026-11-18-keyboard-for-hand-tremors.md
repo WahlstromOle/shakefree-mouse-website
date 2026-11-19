@@ -22,6 +22,7 @@ Whatever keyboard you use, Windows 11 can make it more forgiving:
 - [Filter Keys](/filter-keys-windows-11) ignores doubled and accidental presses.
 - [Sticky Keys](/sticky-keys-windows-11) lets you press shortcuts one key at a time.
 - [Text suggestions](/text-suggestions-windows-11) and [voice typing](/voice-typing-windows-11) mean fewer keys to press.
+- [Keyboard shortcuts](/windows-keyboard-shortcuts) replace many key combinations and mouse clicks.
 
 For many people these settings, plus a steady arm position, make enough difference. If they don't, a different keyboard is the next step. Our tips for [typing with a hand tremor](/typing-with-hand-tremor) cover the settings and posture side in more detail.
 
@@ -65,7 +66,7 @@ Small things help too:
 
 1. **Note your most common mistakes.** Wrong key next door? Look at larger keys or a keyguard. Doubled letters? Filter Keys may be enough.
 2. **Try before you buy** if you can, or buy from a shop with an easy return policy. What works is very personal.
-3. **Ask for help.** An occupational therapist can advise on equipment and set-up. In the UK, AbilityNet runs a free helpline and can arrange volunteer help at home.
+3. **Ask for help.** An occupational therapist can advise on equipment and set-up. In the UK, AbilityNet runs a free helpline and can arrange volunteer help at home. Our overview of [assistive technology for tremors](/assistive-technology-for-tremors) covers other equipment too.
 
 ## Frequently asked questions
 

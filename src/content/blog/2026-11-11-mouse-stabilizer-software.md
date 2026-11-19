@@ -49,7 +49,7 @@ These studies are small and some are old, and they tested their own systems rath
 - **It can't read your mind.** Smoothing separates movement by how fast it changes. Sudden, irregular jerks, or a slow drift in the wrong direction, look like deliberate movement to a filter and may come through.
 - **It adds some lag.** At high strength the pointer feels slower, a bit like moving through honey. Most people get used to it, but it's a real cost.
 - **It doesn't fix clicks on its own.** A hand can shake while pressing the button, moving the pointer off target or pressing twice. That needs separate click features, like those in the next section, or settings such as [ClickLock](/clicklock-windows-11).
-- **It doesn't help with typing.** For doubled letters, use Windows' **Filter keys** (see [Windows 11 accessibility settings for hand tremors](/windows-11-accessibility-tremor)).
+- **It doesn't help with typing.** For doubled letters, use Windows' [**Filter keys**](/filter-keys-windows-11) (see [Windows 11 accessibility settings for hand tremors](/windows-11-accessibility-tremor)). Our tips for [typing with a hand tremor](/typing-with-hand-tremor) cover more.
 - **It doesn't work on touchscreens and phones,** where you touch the screen directly.
 
 ## What to look for
@@ -67,7 +67,7 @@ If you're comparing options, these are worth checking:
 
 We built [ShakeFree Mouse](https://apps.microsoft.com/detail/9NXR1GRZ2P77) around that list. It runs quietly in the background on Windows and works with the mouse or touchpad you already use. **Smoothing** has one slider from Minimal to Maximum, and **Ctrl, Shift and F9** switches it on and off. **Hold to click** keeps the pointer still while you press, and **Ignore quick second clicks** stops accidental double-clicks (more on those in [How to stop accidental double-clicks in Windows](/accidental-double-click)). You can [try the live demo](/#demo) in your browser, and the app is free to try for 5 days. Plans are on our [home page](/#pricing).
 
-It has the same limits as any smoothing software described above, which is why we suggest trying it alongside the free Windows settings in our [main mouse guide](/mouse-hand-tremor).
+It has the same limits as any smoothing software described above, which is why we suggest trying it alongside the free Windows settings in our [main mouse guide](/mouse-hand-tremor). For the wider picture, see our [guide to assistive technology for tremors](/assistive-technology-for-tremors).
 
 ## Frequently asked questions
 

@@ -15,7 +15,7 @@ lead: "With a hand tremor, one press can become two or three, and a finger resti
 
 To turn on Filter Keys in Windows 11, press the **Windows key and U**, select **Keyboard**, and switch on **Filter keys**. Then select the arrow next to it and choose which kind of mistake you want Windows to ignore. Most people with a tremor start with **Ignore unintended keystrokes**, which stops doubled letters.
 
-Our [guide to Windows 11 accessibility settings for hand tremors](/windows-11-accessibility-tremor) gives a short overview. This guide goes further: what each option does, how to choose the waiting times, and how to fix things when Filter Keys gets in the way.
+Our [guide to Windows 11 accessibility settings for hand tremors](/windows-11-accessibility-tremor) gives a short overview. This guide goes further: what each option does, how to choose the waiting times, and how to fix things when Filter Keys gets in the way. For the wider picture of typing with a tremor, see [typing with a hand tremor](/typing-with-hand-tremor).
 
 ## Which problem do you have?
 
@@ -91,7 +91,7 @@ This is the most common surprise. It usually means **Ignore quick keystrokes** i
 Probably the right **Shift** shortcut. Turn off **Keyboard shortcut for Filter keys** as described above.
 
 **"It works on my laptop keyboard but not my other keyboard."**
-Filter Keys is a Windows setting, so it should apply to every keyboard you plug in. If a keyboard came with its own software, check that app's settings too.
+Filter Keys is a Windows setting, so it should apply to every keyboard you plug in. If a keyboard came with its own software, check that app's settings too. If you're thinking of buying a new keyboard, see our guide to [keyboards for hand tremors](/keyboard-for-hand-tremors).
 
 ## Filter Keys and the mouse
 

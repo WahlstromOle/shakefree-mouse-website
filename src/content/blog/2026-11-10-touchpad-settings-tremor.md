@@ -59,7 +59,7 @@ Keep **Drag two fingers to scroll** on if you find it easier than the scroll bar
 
 Many people with tremor find a separate mouse or trackball easier than any touchpad, because the hand and forearm can rest on the desk. If you plug one in, look for **Leave touchpad on when a mouse is connected** at the top of the touchpad settings. Turning it off stops a resting palm from moving the pointer while you use the mouse.
 
-Our [main guide to using a mouse with a hand tremor](/mouse-hand-tremor) covers mice, trackballs, and how to rest your arm for a steadier hand.
+Our [main guide to using a mouse with a hand tremor](/mouse-hand-tremor) covers mice, trackballs, and how to rest your arm for a steadier hand. For a wider look at pointing devices, see our [guide to assistive technology for tremors](/assistive-technology-for-tremors).
 
 ## Frequently asked questions
 

@@ -6,7 +6,7 @@ keyword: mouse hand tremor
 topic: computer-setup
 featured: true
 date: 2026-10-25
-updated: 2026-11-12
+updated: 2026-11-19
 readTime: 6
 image: images/hand-on-mouse.webp
 imageWidth: 1448
@@ -64,7 +64,7 @@ The mouse itself matters. Things people with tremor often find helpful:
 - **A trackball.** The trackball stays still on the desk and you roll the ball with your thumb or fingers, so your hand can rest on it while you click.
 - **A larger mouse** that fills your hand, which some people find easier to hold steady.
 
-If you can, try one before you buy, or buy from a shop with an easy return policy. What works is very personal.
+If you can, try one before you buy, or buy from a shop with an easy return policy. What works is very personal. For a wider look at equipment, see our [guide to assistive technology for tremors](/assistive-technology-for-tremors).
 
 On a laptop? Our guide to [touchpad settings for shaky hands](/touchpad-settings-tremor) covers the touchpad too.
 
@@ -75,6 +75,8 @@ Every click you don’t need is one less chance to miss. A few keyboard shortcut
 - **Tab** moves between buttons and boxes, and **Enter** or **Space** presses them.
 - **Alt and F4** closes the window you’re in.
 - **Ctrl and C** copies, **Ctrl and V** pastes, **Ctrl and Z** undoes.
+
+Our [guide to keyboard shortcuts](/windows-keyboard-shortcuts) lists more.
 
 Windows 11 also has **Voice access** (Settings > Accessibility > **Speech**), which lets you open apps, click buttons and type by speaking. And **Mouse keys** (Settings > Accessibility > **Mouse**) lets you move the pointer with the number keys, one small step at a time. Our [Mouse keys guide](/mouse-keys-windows-11) explains how to set it up.
 

@@ -65,6 +65,8 @@ Once Sticky Keys is on, these replace a lot of mouse work:
 - **Alt**, then **F4** to close the window you're in.
 - **Windows key**, then **D** to show the desktop.
 
+Our [guide to keyboard shortcuts](/windows-keyboard-shortcuts) lists many more.
+
 ## How to turn off Sticky Keys, and stop the pop-up
 
 If a box keeps appearing asking "Do you want to turn on Sticky Keys?", it's because **Shift** was pressed five times in a row. To stop it:
@@ -77,7 +79,7 @@ To turn Sticky Keys off completely, switch off the **Sticky keys** switch on the
 
 ## Sticky Keys and Filter Keys together
 
-If you also get doubled letters, Sticky Keys works well alongside [Filter Keys](/filter-keys-windows-11). Filter Keys ignores unwanted presses; Sticky Keys removes the need to hold keys together. Turn them on one at a time, so you know which change made the difference.
+If you also get doubled letters, Sticky Keys works well alongside [Filter Keys](/filter-keys-windows-11). Filter Keys ignores unwanted presses; Sticky Keys removes the need to hold keys together. Turn them on one at a time, so you know which change made the difference. Our tips for [typing with a hand tremor](/typing-with-hand-tremor) bring more together.
 
 ## Frequently asked questions
 

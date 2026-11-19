@@ -42,8 +42,8 @@ An occupational therapist can look at how you sit and suggest the right chair he
 
 Every key you don't need to press is one less chance to slip.
 
-- **Word suggestions.** Windows 11 can suggest the word you're typing after a few letters, so you pick the word instead of typing it out. Turn it on under **Settings** > **Time & language** > **Typing** > **Show text suggestions when typing on the physical keyboard**. Then press the **up arrow**, choose a word with the **left** and **right arrows**, and press **Enter**.
-- **Your voice.** Press the **Windows key and H** in any text box and speak instead of typing. AbilityNet suggests voice recognition if your voice is clear; it takes a little patience to get used to, but it can take over a lot of typing.
+- **Word suggestions.** Windows 11 can suggest the word you're typing after a few letters, so you pick the word instead of typing it out. Turn it on under **Settings** > **Time & language** > **Typing** > **Show text suggestions when typing on the physical keyboard**. Then press the **up arrow**, choose a word with the **left** and **right arrows**, and press **Enter**. Our [text suggestions guide](/text-suggestions-windows-11) has the details.
+- **Your voice.** Press the **Windows key and H** in any text box and speak instead of typing. AbilityNet suggests voice recognition if your voice is clear; it takes a little patience to get used to, but it can take over a lot of typing. Our [guide to voice typing](/voice-typing-windows-11) shows how.
 - **Copy and paste what you type often.** Your address, email sign-off or a standard reply can live in a note, ready to copy.
 
 ## 4. Make corrections quicker
@@ -64,7 +64,7 @@ The keyboard you have may be making things harder than they need to be.
 - **Larger keys.** Keyboards with bigger keys give you a bigger target. Parkinson's UK and AbilityNet both mention them for people who find it hard to hit the right key.
 - **A keyguard.** This is a rigid plate with a hole over each key. Parkinson's UK explains that it stops you pressing two keys at once, and lets you rest your hands on the plate without typing anything.
 
-If you can, try a keyboard before you buy it. What works is personal.
+If you can, try a keyboard before you buy it. What works is personal. Our guide to [keyboards for hand tremors](/keyboard-for-hand-tremors) goes into more detail.
 
 ## 6. Work with your tremor, not against it
 
